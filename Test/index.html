@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC Site Emulator & Viewport Explorer (CORS Proxy Edition)</title>
+  <style>
+    /* Global Reset & PC Dark Theme */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: #1a1a24;
+      color: #e0e0e0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Control Toolbar */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      background-color: #282836;
+      border-bottom: 1px solid #3c3c4e;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: #3a3a4c;
+      color: #ffffff;
+      border: 1px solid #505068;
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .btn:hover {
+      background-color: #4a4a62;
+      border-color: #6a6a88;
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+    }
+
+    .btn-primary {
+      background-color: #007acc;
+      border-color: #0098ff;
+    }
+
+    .btn-primary:hover {
+      background-color: #008be6;
+    }
+
+    .address-bar {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      align-items: center;
+      background-color: #121218;
+      border: 1px solid #3c3c4e;
+      border-radius: 6px;
+      padding: 2px 8px;
+    }
+
+    .address-bar:focus-within {
+      border-color: #007acc;
+      box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.3);
+    }
+
+    .address-bar input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #ffffff;
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    .select-dropdown {
+      background-color: #3a3a4c;
+      color: #ffffff;
+      border: 1px solid #505068;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 13px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .toggle-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      background: #1e1e28;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid #3c3c4e;
+    }
+
+    .toggle-group input {
+      cursor: pointer;
+    }
+
+    /* Main Workspace */
+    .workspace {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0f0f14;
+      position: relative;
+      overflow: auto;
+      padding: 12px;
+    }
+
+    .viewport-container {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      overflow: hidden;
+      position: relative;
+      transition: width 0.25s ease, height 0.25s ease;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #ffffff;
+    }
+
+    /* Bottom Status Bar */
+    .status-bar {
+      background-color: #20202c;
+      color: #9a9ab0;
+      font-size: 12px;
+      padding: 5px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #3c3c4e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PC Browser Toolbar -->
+  <div class="toolbar">
+    <button class="btn" onclick="reloadSite()" title="Reload Frame">🔄 Reload</button>
+    <button class="btn" onclick="goHome()" title="Reset to Home">🏠 Home</button>
+
+    <div class="address-bar">
+      <input type="text" id="urlInput" placeholder="Enter URL (e.g., https://example.com)" onkeydown="handleKeyPress(event)">
+    </div>
+
+    <button class="btn btn-primary" onclick="loadSite()">Go</button>
+
+    <!-- Proxy Toggle Checkbox -->
+    <div class="toggle-group" title="Fetch site HTML via proxy to bypass X-Frame-Options embedding locks">
+      <input type="checkbox" id="useProxy" checked>
+      <label for="useProxy">CORS Proxy Mode</label>
+    </div>
+
+    <!-- Preset Sites -->
+    <select class="select-dropdown" id="presetSelect" onchange="loadPreset(this.value)">
+      <option value="">-- Presets --</option>
+      <option value="https://example.com">Example.com</option>
+      <option value="https://en.wikipedia.org">Wikipedia</option>
+      <option value="https://news.ycombinator.com">Hacker News</option>
+      <option value="https://www.openstreetmap.org">OpenStreetMap</option>
+      <option value="https://w3schools.com">W3Schools</option>
+    </select>
+
+    <!-- Viewport Aspect Ratio / Resolution Settings -->
+    <select class="select-dropdown" id="resolutionSelect" onchange="changeViewportSize(this.value)">
+      <option value="full">Full Workspace</option>
+      <option value="1920x1080">Desktop (1920 x 1080)</option>
+      <option value="1366x768">Laptop (1366 x 768)</option>
+      <option value="1024x768">Tablet (1024 x 768)</option>
+    </select>
+
+    <!-- Fullscreen Button -->
+    <button class="btn" id="fullscreenBtn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+  </div>
+
+  <!-- Frame Viewport Space -->
+  <div class="workspace">
+    <div class="viewport-container" id="viewportContainer">
+      <iframe 
+        id="siteFrame" 
+        title="Emulated Website Frame"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Bottom Status Bar -->
+  <div class="status-bar">
+    <span id="statusText">Status: Ready</span>
+    <span id="viewportRes">Resolution: Full Workspace</span>
+  </div>
+
+  <script>
+    const iframe = document.getElementById('siteFrame');
+    const urlInput = document.getElementById('urlInput');
+    const statusText = document.getElementById('statusText');
+    const useProxyCheckbox = document.getElementById('useProxy');
+    const viewportContainer = document.getElementById('viewportContainer');
+    const viewportRes = document.getElementById('viewportRes');
+
+    let currentUrl = "https://example.com";
+    urlInput.value = currentUrl;
+
+    async function loadSite() {
+      let url = urlInput.value.trim();
+      if (!url) return;
+
+      if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+        urlInput.value = url;
+      }
+
+      currentUrl = url;
+
+      if (useProxyCheckbox.checked) {
+        statusText.textContent = `Fetching via CORS Proxy: ${url}...`;
+        try {
+          // Clear standard iframe URL
+          iframe.src = 'about:blank';
+          
+          // Fetch raw HTML via proxy
+          const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+          const response = await fetch(proxyUrl);
+          
+          if (!response.ok) throw new Error(`Proxy status: ${response.status}`);
+          let html = await response.text();
+
+          // Inject <base> tag into <head> so relative CSS, JS, and image paths load correctly
+          const baseTag = `<base href="${url}">`;
+          if (html.includes('<head>')) {
+            html = html.replace(/<head>/i, `<head>${baseTag}`);
+          } else {
+            html = `${baseTag}${html}`;
+          }
+
+          // Render into frame using srcdoc
+          iframe.srcdoc = html;
+          statusText.textContent = `Loaded via Proxy: ${url}`;
+        } catch (err) {
+          console.error(err);
+          statusText.textContent = `Proxy fetch failed. Falling back to direct load...`;
+          iframe.removeAttribute('srcdoc');
+          iframe.src = url;
+        }
+      } else {
+        // Direct iframe load mode
+        iframe.removeAttribute('srcdoc');
+        statusText.textContent = `Direct Loading: ${url}...`;
+        iframe.src = url;
+      }
+    }
+
+    function reloadSite() {
+      loadSite();
+    }
+
+    function goHome() {
+      urlInput.value = "https://example.com";
+      loadSite();
+    }
+
+    function loadPreset(url) {
+      if (!url) return;
+      urlInput.value = url;
+      loadSite();
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        loadSite();
+      }
+    }
+
+    // Fullscreen Toggle
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          alert(`Could not enter fullscreen: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      const fsBtn = document.getElementById('fullscreenBtn');
+      if (document.fullscreenElement) {
+        fsBtn.innerHTML = '🗗 Exit Fullscreen';
+      } else {
+        fsBtn.innerHTML = '⛶ Fullscreen';
+      }
+    });
+
+    // Viewport Size Presets
+    function changeViewportSize(val) {
+      if (val === 'full') {
+        viewportContainer.style.width = '100%';
+        viewportContainer.style.height = '100%';
+        viewportRes.textContent = 'Resolution: Full Workspace';
+      } else {
+        const [w, h] = val.split('x');
+        viewportContainer.style.width = w + 'px';
+        viewportContainer.style.height = h + 'px';
+        viewportRes.textContent = `Resolution: ${w}x${h} Preset`;
+      }
+    }
+
+    // Initial load
+    loadSite();
+  </script>
+</body>
+</html>
