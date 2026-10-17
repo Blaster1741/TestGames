@@ -1,0 +1,597 @@
+<!doctype html>
+
+<html lang="en" class="">
+  <head>
+    <script src="/assets/rgc-online.js?v=20260917-on2"></script>
+    <script src="/assets/jsdos-cloud-sdk.js?v=20260904-cloud6"></script>
+    <script src="/assets/rgc-cloud-saves.js?v=20260904-cloud6"></script>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+      window.noZensmooth = true;
+      window.pageData = {atTime: 1767905276 };
+      window.humble = window.humble || {};
+      window.humble.locale = "en";
+      window.humble.timezone = "America/Los_Angeles";
+
+    </script>
+    <script id="main-js" data-dist_version="c9ed87a47d080e3663d596d7acf24ed2c605d66f" src="main.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="242ae19bb532a3e6a6c48a277992411b64a4f240.css" />
+<style type='text/css'>
+  /*! normalize.css v2.1.1 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Prevent system color scheme's background color being used in Firefox, IE,
+ *    and Opera.
+ * 2. Prevent system color scheme's text color being used in Firefox, IE, and
+ *    Opera.
+ * 3. Set default font family to sans-serif.
+ * 4. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    /* this causes issues */
+    /*background: #fff;*/ /* 1 */
+    color: #000; /* 2 */
+    font-family: sans-serif; /* 3 */
+    -ms-text-size-adjust: 100%; /* 4 */
+    -webkit-text-size-adjust: 100%; /* 4 */
+    overflow: hidden;
+    height: 100%;
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Add some standard margins so it doesn't look bad -OJS.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    margin: 3px 0.5ex; /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ==========================================================================
+   iframes
+   ========================================================================== */
+
+/**
+ * Remove borders on iframes.
+ */
+
+iframe {
+    border: 0;
+}
+  
+  html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Sofia Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Localize.js uses the <var> tag to indicate certain special things. However,
+   some browsers apply special CSS to the <var> tag which we don't want. This
+   effectively removes any special CSS that the browser might apply to <var>. */
+var {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+  
+  
+</style>
+  
+  
+<link rel="stylesheet" href="0ea26e2928f2239cda1b10fddb7101c486d40509.css" />
+<link rel="stylesheet" href="11b96219fef6dc9d011b5fa05c10f839480270ce.css" />
+<link rel="stylesheet" href="908a81b1c3db8fd2a7e222025a62f43b8dc1e00d.css" />
+
+<style type='text/css'>
+/* Адаптивность для игры - убираем прокрутку, но не ограничиваем размер */
+html, body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* В обычном режиме ограничиваем ширину, но делаем больше для комфортной игры */
+.asm-player {
+  max-width: min(100vw, 1400px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* В fullscreen режиме убираем все ограничения */
+.asm-player:fullscreen,
+.asm-player:-webkit-full-screen,
+.asm-player:-moz-full-screen,
+.asm-player:-ms-fullscreen {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Также для body в fullscreen */
+body:fullscreen .asm-player,
+body:-webkit-full-screen .asm-player,
+body:-moz-full-screen .asm-player,
+body:-ms-fullscreen .asm-player {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+</style>
+
+  
+
+
+  <meta name='robots' content='noindex, nofollow'></head>
+  <body>
+
+  
+<div class="asm-player"></div>
+
+
+  
+
+  <script type='text/javascript'>
+    // Обработка fullscreen для правильного масштабирования
+    function handleFullscreenChange() {
+      const player = document.querySelector('.asm-player');
+      if (!player) return;
+      
+      const isFullscreen = document.fullscreenElement || 
+                          document.webkitFullscreenElement || 
+                          document.mozFullScreenElement || 
+                          document.msFullscreenElement;
+      
+      if (isFullscreen) {
+        // В fullscreen убираем ограничения
+        player.style.maxWidth = '100vw';
+        player.style.maxHeight = '100vh';
+        player.style.width = '100vw';
+        player.style.height = '100vh';
+        player.style.margin = '0';
+      } else {
+        // Выход из fullscreen - восстанавливаем ограничения
+        player.style.maxWidth = 'min(100vw, 1400px)';
+        player.style.maxHeight = '';
+        player.style.width = '';
+        player.style.height = '';
+        player.style.margin = '0 auto';
+        
+        // Вызываем requestResize для пересчёта размеров
+        if (window.asmPlayer && typeof window.asmPlayer.requestResize === 'function') {
+          setTimeout(function() {
+            window.asmPlayer.requestResize();
+          }, 100);
+        }
+      }
+    }
+    
+    // Слушаем события fullscreen
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+    
+    // Также вызываем при загрузке
+    window.addEventListener('load', function() {
+      setTimeout(handleFullscreenChange, 500);
+    });
+  </script>
+
+  
+
+<script id="webpack-asm-player-data" type="application/json">
+  {
+    "staticURL": "/",
+    "asmOptions": {"machineName": "ftl_asm_demo", "height": 410, "displayItem": {"publishers": [{"publisher-name": "Subset Games", "publisher-url": "http://www.ftlgame.com/"}], "machine_name": "ftlfasterthanlight", "storefront-featured-image-large": "images/storefront/master_images/ftlfasterthanlight_storefront.jpeg", "storefront-icon": "images/storefront/small_featured_images/ftlfasterthanlight_storefront.jpg", "bundle-show-rating": false, "promotional-message": "Includes FTL: Advanced Edition for FREE", "user_ratings": {"steam_overall": {"steam_percent": 0.95, "review_text": "overwhelmingly_positive", "steam_count": 49671}, "steam_recent": {"steam_percent": 0.93, "review_text": "very_positive", "steam_count": 311}}, "human-name": "FTL: Advanced Edition", "description-text": "\n \n \n \n  FTL is now available in 9 languages!  English, German, Spanish, French, Italian, Polish, Brazilian Portuguese, Russian and Simplified Mandarin!\n  <br>\n  <br>\n  ************************\n  <br>\n  The free expansion, <i>FTL: Advanced Edition</i>, is available now!  Content additions include: new alien race, events, weapons, playable ships, drones, and more!  Also adds additional musical tracks by Ben Prunty, and events by Tom Jubert and guest writer Chris Avellone.\n  <br>\n  <br>\n  If you already own FTL it should update the new content automatically.  Advanced Edition is included free for anyone who purchases the game from this point forward.\n  <br>\n  ************************\n  <br>\n  <br>\n  In FTL you experience the atmosphere of running a spaceship trying to save the galaxy. It's a dangerous mission, with every encounter presenting a unique challenge with multiple solutions. What will you do if a heavy missile barrage shuts down your shields? Reroute all power to the engines in an attempt to escape, power up additional weapons to blow your enemy out of the sky, or take the fight to them with a boarding party? This \"spaceship simulation roguelike-like\" allows you to take your ship and crew on an adventure through a randomly generated galaxy filled with glory and bitter defeat.\n  <strong>\n   <br>\n   <br>\n   Key Features:\n  </strong>\n  <br>\n  <ul>\n   <li>\n    <strong>\n     Complex Strategic Gameplay\n    </strong>\n    - Give orders to your crew, manage ship power distribution and choose weapon targets in the heat of battle.\n    <br>\n   </li>\n   <li>\n    <strong>\n     Play at Your Own Speed\n    </strong>\n    - Pause the game mid-combat to evaluate your strategy and give orders.\n    <br>\n   </li>\n   <li>\n    <strong>\n     Unique Lifeforms and Technology\n    </strong>\n    \u2013 Upgrade your ship and unlock new ones with the help of six diverse alien races.\n    <br>\n   </li>\n   <li>\n    <strong>\n     Be the Captain You Want\n    </strong>\n    - Hundreds of text based encounters will force you to make tough decisions.\n    <br>\n   </li>\n   <li>\n    <strong>\n     Randomized Galaxy\n    </strong>\n    - Each play-through will feature different enemies, events, and results to your decisions. No two play-throughs will be quite the same.\n    <br>\n   </li>\n   <li>\n    <strong>\n     No Second Chances!\n    </strong>\n    - Permadeath means when you die, there's no coming back. The constant threat of defeat adds importance and tension to every action.\n   </li>\n  </ul>\n \n", "preview-image": "images/bg/ftl.jpg", "display_user_ratings": "steam_recent", "front-page-art": "images/displayitems/ftl.png", "genres": ["indie", "strategy"], "payee_secondary_id": "", "msrp-pricing": {"RU": ["249", "RUB"], "CN": ["29", "CNY"], "CA": ["10.99", "CAD"], "TR": ["18.00", "TRY"], "US": ["9.99", "USD"], "NZ": ["11.99", "NZD"], "AU": ["14.50", "AUD"], "PH": ["319.95", "PHP"], "EUROPE_GBP": ["6.99", "GBP"], "EUROPE_EURO": ["9.99", "EUR"]}, "content": {"mobile": {}, "game": {"download": ["windows", "mac", "linux"], "steam": ["windows", "mac", "linux"]}}, "carousel-content": {"asm-demo-machine-name": ["ftl_asm_demo"], "youtube-link": [], "screenshot": ["images/storefront/screenshots/ftlfasterthanlight_ss01.jpeg", "images/storefront/screenshots/ftlfasterthanlight_ss02.jpeg", "images/storefront/screenshots/ftlfasterthanlight_ss03.jpeg", "images/storefront/screenshots/ftlfasterthanlight_ss04.jpeg", "images/storefront/screenshots/ftlfasterthanlight_ss05.jpeg", "images/storefront/screenshots/ftlfasterthanlight_ss06.jpeg", "images/storefront/screenshots/ftlfasterthanlight_ss07.jpeg", "images/storefront/screenshots/ftlfasterthanlight_ss08.jpeg", "images/storefront/screenshots/ftlfasterthanlight_ss09.jpeg", "images/storefront/screenshots/ftlfasterthanlight_ss10.jpeg"]}, "developers": [{"developer-name": "Subset Games", "developer-url": "http://www.ftlgame.com/"}], "storefront-featured-image-small": "images/storefront/small_featured_images/ftlfasterthanlight_storefront.jpg", "system-requirements": "<b>Minimum:</b><br><br><b><u>Windows</u></b><br><strong>OS:</strong> Windows XP / Vista / 7<br><strong>Processor:</strong> 2 GHz<br><strong>Memory:</strong> 1 GB RAM<br><strong>Graphics:</strong> 1280x720 minimum resolution, OpenGL 2.0 Support, and recommended dedicated graphics card with 128 MB of RAM<br><strong>Hard Drive:</strong> 175 MB HD space<br><br><b><u>Mac</u></b><br><strong>OS:</strong> Mac OS X 10.6 or above<br><strong>Processor:</strong> Intel 2 GHz<br><strong>Memory:</strong> 1 GB RAM<br><strong>Graphics:</strong> 1280x720 minimum resolution, OpenGL 2.0 Support, and recommended dedicated graphics card with 128 MB of RAM<br><strong>Hard Drive:</strong> 175 MB HD space<br><br><b><u>Linux</u></b><br><strong>OS:</strong> Ubuntu 12.04 LTS, fully updated<br><strong>Processor:</strong> 2 GHz<br><strong>Memory:</strong> 1GB RAM<br><strong>Graphics:</strong> 1280x720 minimum resolution, OpenGL 2.0 Support<br><strong>Hard Drive:</strong> 175 MB HD space<br><br><b>Supported Languages:</b> English, French, Italian, German, Spanish - Spain, Polish, Portuguese - Brazil, Russian, Simplified Chinese, Japanese"}, "autoStart": false, "previewImage": "5a8496cb0e4193451ea195f7f2a87c76b16a428f.jpg", "width": 740, "allowAutoDownload": true, "asmConfig": {"demoMode": true, "demoText": {"preLoad": "Save the Federation from the rebels in this preview and travel faster than light!", "overBody": "Buy now and play the full version whenever you want in your browser, DRM-free and on Steam!", "overHeading": ""}, "skipSetAspectRatio": true, "display_item": "ftlfasterthanlight"}, "manifest": {"audio/music/bp_MUS_CosmosEXPLORE.ogg": "music/bp_MUS_CosmosEXPLORE.ogg", "asmFile": "FTL-1413323248.js", "audio/music/bp_MUS_LastStand.ogg": "music/bp_MUS_LastStand.ogg", "audio/music/bp_MUS_HackBATTLE.ogg": "music/bp_MUS_HackBATTLE.ogg", "FTL.js": "FTL-1413323248.js", "audio/music/bp_MUS_VoidEXPLORE.ogg": "music/bp_MUS_VoidEXPLORE.ogg", "audio/music/bp_MUS_MilkyWayEXPLORE.ogg": "music/bp_MUS_MilkyWayEXPLORE.ogg", "audio/music/bp_MUS_CivilBATTLE.ogg": "music/bp_MUS_CivilBATTLE.ogg", "audio/music/bp_MUS_SlugBATTLE.ogg": "music/bp_MUS_SlugBATTLE.ogg", "audio/music/bp_MUS_ZoltanBATTLE.ogg": "music/bp_MUS_ZoltanBATTLE.ogg", "audio/music/bp_MUS_RockmenEXPLORE.ogg": "music/bp_MUS_RockmenEXPLORE.ogg", "audio/music/bp_MUS_LostShipBATTLE.ogg": "music/bp_MUS_LostShipBATTLE.ogg", "audio/music/bp_MUS_EngiBATTLE.ogg": "music/bp_MUS_EngiBATTLE.ogg", "audio/music/bp_MUS_ShrikeEXPLORE.ogg": "music/bp_MUS_ShrikeEXPLORE.ogg", "FTL-audio.data": "FTL-audio-1413323248.data", "audio/music/bp_MUS_CosmosBATTLE.ogg": "music/bp_MUS_CosmosBATTLE.ogg", "audio/music/bp_MUS_EngiEXPLORE.ogg": "music/bp_MUS_EngiEXPLORE.ogg", "audio/music/bp_MUS_LostShipEXPLORE.ogg": "music/bp_MUS_LostShipEXPLORE.ogg", "audio/music/bp_MUS_HackEXPLORE.ogg": "music/bp_MUS_HackEXPLORE.ogg", "audio/music/bp_MUS_MantisEXPLORE.ogg": "music/bp_MUS_MantisEXPLORE.ogg", "audio/music/bp_MUS_MilkyWayBATTLE.ogg": "music/bp_MUS_MilkyWayBATTLE.ogg", "audio/music/bp_MUS_RockmenBATTLE.ogg": "music/bp_MUS_RockmenBATTLE.ogg", "audio/music/bp_MUS_ShrikeBATTLE.ogg": "music/bp_MUS_ShrikeBATTLE.ogg", "FTL.js.mem": "FTL-1413323248.js.mem", "audio/music/bp_MUS_TitleScreen.ogg": "music/bp_MUS_TitleScreen.ogg", "audio/music/bp_MUS_ZoltanEXPLORE.ogg": "music/bp_MUS_ZoltanEXPLORE.ogg", "audio/music/bp_MUS_WastelandEXPLORE.ogg": "music/bp_MUS_WastelandEXPLORE.ogg", "audio/music/bp_MUS_DeepspaceBATTLE.ogg": "music/bp_MUS_DeepspaceBATTLE.ogg", "asmData": "FTL-audio-1413323248.data", "audio/music/bp_MUS_DebrisEXPLORE.ogg": "music/bp_MUS_DebrisEXPLORE.ogg", "audio/music/bp_MUS_WastelandBATTLE.ogg": "music/bp_MUS_WastelandBATTLE.ogg", "FTL.data": "FTL-1413323248.data", "audio/music/bp_MUS_DebrisBATTLE.ogg": "music/bp_MUS_DebrisBATTLE.ogg", "audio/music/bp_MUS_CivilEXPLORE.ogg": "music/bp_MUS_CivilEXPLORE.ogg", "audio/music/bp_MUS_SlugEXPLORE.ogg": "music/bp_MUS_SlugEXPLORE.ogg", "audio/music/bp_MUS_ColonialEXPLORE.ogg": "music/bp_MUS_ColonialEXPLORE.ogg", "audio/music/bp_MUS_MantisBATTLE.ogg": "music/bp_MUS_MantisBATTLE.ogg", "audio/music/bp_MUS_VoidBATTLE.ogg": "music/bp_MUS_VoidBATTLE.ogg", "audio/music/bp_MUS_ColonialBATTLE.ogg": "music/bp_MUS_ColonialBATTLE.ogg", "audio/music/bp_MUS_DeepspaceEXPLORE.ogg": "music/bp_MUS_DeepspaceEXPLORE.ogg"}, "showNewThings": false, "email": null}
+  }
+</script>
+
+  
+
+<script src="19d6f4e539bf43685bcbd302729f6046d6e759e1.js"></script>
+
+
+  </body>
+</html>

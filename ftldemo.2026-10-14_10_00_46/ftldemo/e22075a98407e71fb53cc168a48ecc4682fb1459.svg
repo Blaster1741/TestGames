@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="share-icon" sketch:type="MSLayerGroup" fill="#FFFFFF">
+            <path d="M17.778,13.964 C16.506,13.964 15.384,14.57 14.651,15.498 L7.852,12.021 C7.941,11.689 8.005,11.346 8.005,10.985 C8.005,10.592 7.929,10.222 7.823,9.862 L14.592,6.401 C15.321,7.371 16.472,8.005 17.779,8.005 C19.993,8.005 21.784,6.214 21.784,4.002 C21.784,1.792 19.993,3.55271368e-15 17.779,3.55271368e-15 C15.57,3.55271368e-15 13.777,1.792 13.777,4.002 C13.777,4.364 13.841,4.708 13.931,5.041 L7.134,8.518 C6.4,7.589 5.276,6.981 4.002,6.981 C1.79,6.981 0,8.774 0,10.985 C0,13.196 1.79,14.988 4.002,14.988 C5.311,14.988 6.461,14.352 7.193,13.381 L13.959,16.842 C13.853,17.201 13.776,17.574 13.776,17.968 C13.776,20.179 15.569,21.971 17.778,21.971 C19.992,21.971 21.783,20.179 21.783,17.968 C21.783,15.755 19.992,13.964 17.778,13.964 L17.778,13.964 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
