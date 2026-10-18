@@ -11,7 +11,7 @@ body::before {
     transform: translate(-50%, -50%);
     width: 50%;
     height: 50%;
-    background: url('https://cdn.jsdelivr.net/gh/67-Factory/web-ports@main/badpiggies/TemplateData/progressLogo.Dark.png') no-repeat center / contain;
+    background: url('progressLogo.Dark.png') no-repeat center / contain;
     z-index: 99;
     animation: ihopepplnotice 6s ease-in-out forwards;
     /* this shit is just like an image popping up for 6 seconds, uhhh this was made bc the unity loading icon is too small to see the text so yea */
