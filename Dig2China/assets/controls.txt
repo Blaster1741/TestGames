@@ -1,0 +1,116 @@
+controls.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+CONTROLS_BG
+  rotate: false
+  xy: 2, 2
+  size: 322, 492
+  orig: 322, 492
+  offset: 0, 0
+  index: -1
+CONTROLS_BOOST_Border
+  rotate: false
+  xy: 889, 2
+  size: 160, 217
+  orig: 160, 217
+  offset: 0, 0
+  index: -1
+CONTROLS_Border
+  rotate: false
+  xy: 326, 2
+  size: 186, 243
+  orig: 186, 244
+  offset: 0, 1
+  index: 1
+CONTROLS_Border
+  rotate: false
+  xy: 326, 2
+  size: 186, 243
+  orig: 186, 244
+  offset: 0, 1
+  index: 2
+CONTROLS_Border
+  rotate: false
+  xy: 702, 2
+  size: 185, 240
+  orig: 186, 244
+  offset: 0, 0
+  index: 3
+CONTROLS_Border
+  rotate: false
+  xy: 702, 2
+  size: 185, 240
+  orig: 186, 244
+  offset: 0, 0
+  index: 4
+CONTROLS_Border
+  rotate: false
+  xy: 514, 2
+  size: 186, 242
+  orig: 186, 244
+  offset: 0, 1
+  index: 5
+CONTROLS_Border
+  rotate: false
+  xy: 514, 2
+  size: 186, 242
+  orig: 186, 244
+  offset: 0, 1
+  index: 6
+CONTROLS_HowtoPlay
+  rotate: false
+  xy: 326, 247
+  size: 186, 243
+  orig: 186, 244
+  offset: 0, 1
+  index: 1
+CONTROLS_HowtoPlay
+  rotate: false
+  xy: 326, 247
+  size: 186, 243
+  orig: 186, 244
+  offset: 0, 1
+  index: 2
+CONTROLS_HowtoPlay
+  rotate: false
+  xy: 702, 244
+  size: 185, 240
+  orig: 186, 244
+  offset: 0, 0
+  index: 3
+CONTROLS_HowtoPlay
+  rotate: false
+  xy: 702, 244
+  size: 185, 240
+  orig: 186, 244
+  offset: 0, 0
+  index: 4
+CONTROLS_HowtoPlay
+  rotate: false
+  xy: 514, 246
+  size: 186, 242
+  orig: 186, 244
+  offset: 0, 1
+  index: 5
+CONTROLS_HowtoPlay
+  rotate: false
+  xy: 514, 246
+  size: 186, 242
+  orig: 186, 244
+  offset: 0, 1
+  index: 6
+CONTROLS_Words_Boost
+  rotate: false
+  xy: 889, 271
+  size: 121, 43
+  orig: 121, 43
+  offset: 0, 0
+  index: -1
+CONTROLS_Words_HowtoPlay
+  rotate: false
+  xy: 889, 221
+  size: 128, 48
+  orig: 128, 48
+  offset: 0, 0
+  index: -1

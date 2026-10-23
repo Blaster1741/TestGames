@@ -1,0 +1,151 @@
+loading.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+LOADING_Continue
+  rotate: false
+  xy: 404, 438
+  size: 198, 29
+  orig: 198, 29
+  offset: 0, 0
+  index: -1
+LOADING_Dig_BG
+  rotate: false
+  xy: 0, 0
+  size: 404, 507
+  orig: 404, 507
+  offset: 0, 0
+  index: -1
+LOADING_Dig_KidStop
+  rotate: false
+  xy: 404, 0
+  size: 229, 235
+  orig: 229, 235
+  offset: 0, 0
+  index: -1
+LOADING_Dig_Kid
+  rotate: false
+  xy: 404, 235
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 1
+LOADING_Dig_Kid
+  rotate: false
+  xy: 404, 235
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 2
+LOADING_Dig_Kid
+  rotate: false
+  xy: 404, 235
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 3
+LOADING_Dig_Kid
+  rotate: false
+  xy: 404, 235
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 4
+LOADING_Dig_Kid
+  rotate: false
+  xy: 404, 235
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 5
+LOADING_Dig_Kid
+  rotate: false
+  xy: 404, 235
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 6
+LOADING_Dig_Kid
+  rotate: false
+  xy: 404, 235
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 7
+LOADING_Dig_Kid
+  rotate: false
+  xy: 557, 235
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 8
+LOADING_Dig_Kid
+  rotate: false
+  xy: 557, 235
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 9
+LOADING_Dig_Kid
+  rotate: false
+  xy: 633, 0
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 10
+LOADING_Dig_Kid
+  rotate: false
+  xy: 633, 0
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 11
+LOADING_Dig_Kid
+  rotate: false
+  xy: 786, 0
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 12
+LOADING_Dig_Kid
+  rotate: false
+  xy: 786, 0
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 13
+LOADING_Dig_Kid
+  rotate: false
+  xy: 710, 203
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 14
+LOADING_Dig_Kid
+  rotate: false
+  xy: 710, 203
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 15
+LOADING_Dig_Kid
+  rotate: false
+  xy: 863, 203
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 16
+LOADING_Dig_Kid
+  rotate: false
+  xy: 863, 203
+  size: 153, 203
+  orig: 153, 203
+  offset: 0, 0
+  index: 17
+LOADING_Loading
+  rotate: false
+  xy: 404, 467
+  size: 142, 28
+  orig: 142, 28
+  offset: 0, 0
+  index: -1

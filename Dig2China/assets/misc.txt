@@ -1,0 +1,130 @@
+misc.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+China_Background
+  rotate: false
+  xy: 2, 2
+  size: 655, 267
+  orig: 655, 267
+  offset: 0, 0
+  index: -1
+STAND_Wood_Fall
+  rotate: false
+  xy: 2, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 1
+STAND_Wood_Fall
+  rotate: false
+  xy: 117, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 2
+STAND_Wood_Fall
+  rotate: false
+  xy: 232, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 3
+STAND_Wood_Fall
+  rotate: false
+  xy: 347, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 4
+STAND_Wood_Fall
+  rotate: false
+  xy: 462, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 5
+STAND_Wood_Fall
+  rotate: false
+  xy: 577, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 6
+STAND_Wood_Fall
+  rotate: false
+  xy: 692, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 7
+STAND_Wood_Fall
+  rotate: false
+  xy: 807, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 8
+STAND_Wood_Fall
+  rotate: false
+  xy: 922, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 9
+STAND_Wood_Fall
+  rotate: false
+  xy: 922, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 10
+STAND_Wood_Fall
+  rotate: false
+  xy: 922, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 11
+STAND_Wood_Fall
+  rotate: false
+  xy: 922, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 12
+STAND_Wood_Fall
+  rotate: false
+  xy: 922, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 13
+STAND_Wood_Fall
+  rotate: false
+  xy: 922, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 14
+STAND_Wood_Fall
+  rotate: false
+  xy: 922, 279
+  size: 113, 27
+  orig: 113, 27
+  offset: 0, 0
+  index: 15
+Topside_Background
+  rotate: false
+  xy: 659, 2
+  size: 651, 260
+  orig: 651, 260
+  offset: 0, 0
+  index: -1
+Topside_Grass
+  rotate: false
+  xy: 659, 264
+  size: 648, 13
+  orig: 648, 13
+  offset: 0, 0
+  index: -1

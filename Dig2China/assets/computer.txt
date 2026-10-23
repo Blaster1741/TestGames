@@ -1,0 +1,1026 @@
+computer.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1442, 187
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 1
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1442, 187
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 2
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1442, 187
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 3
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1602, 2
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 4
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1122, 748
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 5
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1282, 557
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 6
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1442, 369
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 7
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1602, 184
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 8
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 2, 584
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 9
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 162, 390
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 10
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 322, 196
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 11
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 2
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 12
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 2
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 13
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 2
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 14
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 2
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 15
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 2
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 16
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 2, 777
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 17
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 802, 2
+  size: 158, 190
+  orig: 158, 192
+  offset: 0, 0
+  index: 18
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 162, 776
+  size: 158, 190
+  orig: 158, 192
+  offset: 0, 0
+  index: 19
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 322, 775
+  size: 158, 190
+  orig: 158, 192
+  offset: 0, 0
+  index: 20
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 642, 388
+  size: 158, 189
+  orig: 158, 192
+  offset: 0, 0
+  index: 21
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 802, 194
+  size: 158, 189
+  orig: 158, 192
+  offset: 0, 0
+  index: 22
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 642, 579
+  size: 158, 188
+  orig: 158, 192
+  offset: 0, 0
+  index: 23
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 802, 385
+  size: 158, 188
+  orig: 158, 192
+  offset: 0, 0
+  index: 24
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1122, 2
+  size: 158, 187
+  orig: 158, 192
+  offset: 0, 0
+  index: 25
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 802, 575
+  size: 158, 186
+  orig: 158, 192
+  offset: 0, 0
+  index: 26
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 962, 383
+  size: 158, 186
+  orig: 158, 192
+  offset: 0, 0
+  index: 27
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1282, 2
+  size: 158, 185
+  orig: 158, 192
+  offset: 0, 0
+  index: 28
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 962, 571
+  size: 158, 184
+  orig: 158, 192
+  offset: 0, 0
+  index: 29
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 962, 571
+  size: 158, 184
+  orig: 158, 192
+  offset: 0, 0
+  index: 30
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 962, 571
+  size: 158, 184
+  orig: 158, 192
+  offset: 0, 0
+  index: 31
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 962, 571
+  size: 158, 184
+  orig: 158, 192
+  offset: 0, 0
+  index: 32
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 962, 571
+  size: 158, 184
+  orig: 158, 192
+  offset: 0, 0
+  index: 33
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 802, 763
+  size: 158, 185
+  orig: 158, 192
+  offset: 0, 0
+  index: 34
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1122, 191
+  size: 158, 186
+  orig: 158, 192
+  offset: 0, 0
+  index: 35
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 642, 769
+  size: 158, 187
+  orig: 158, 192
+  offset: 0, 0
+  index: 36
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 962, 193
+  size: 158, 188
+  orig: 158, 192
+  offset: 0, 0
+  index: 37
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 962, 2
+  size: 158, 189
+  orig: 158, 192
+  offset: 0, 0
+  index: 38
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 773
+  size: 158, 189
+  orig: 158, 192
+  offset: 0, 0
+  index: 39
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 581
+  size: 158, 190
+  orig: 158, 192
+  offset: 0, 0
+  index: 40
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 322, 389
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 41
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 195
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 42
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 642, 2
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 43
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 162, 583
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 44
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 2, 2
+  size: 158, 192
+  orig: 158, 192
+  offset: 0, 0
+  index: 45
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 2, 196
+  size: 158, 192
+  orig: 158, 192
+  offset: 0, 0
+  index: 46
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 162, 2
+  size: 158, 192
+  orig: 158, 192
+  offset: 0, 0
+  index: 47
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 2, 390
+  size: 158, 192
+  orig: 158, 192
+  offset: 0, 0
+  index: 48
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 162, 196
+  size: 158, 192
+  orig: 158, 192
+  offset: 0, 0
+  index: 49
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 322, 2
+  size: 158, 192
+  orig: 158, 192
+  offset: 0, 0
+  index: 50
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 322, 582
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 51
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 388
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 52
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 388
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 53
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 388
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 54
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 388
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 55
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 482, 388
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 56
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 642, 195
+  size: 158, 191
+  orig: 158, 192
+  offset: 0, 0
+  index: 57
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1122, 379
+  size: 158, 183
+  orig: 158, 192
+  offset: 0, 0
+  index: 58
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1282, 189
+  size: 158, 183
+  orig: 158, 192
+  offset: 0, 0
+  index: 59
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1442, 2
+  size: 158, 183
+  orig: 158, 192
+  offset: 0, 0
+  index: 60
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 962, 757
+  size: 158, 183
+  orig: 158, 192
+  offset: 0, 0
+  index: 61
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1122, 564
+  size: 158, 182
+  orig: 158, 192
+  offset: 0, 0
+  index: 62
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1282, 374
+  size: 158, 181
+  orig: 158, 192
+  offset: 0, 0
+  index: 63
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1762, 2
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 64
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1762, 2
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 65
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1762, 2
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 66
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1282, 739
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 67
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1442, 551
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 68
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1442, 187
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 69
+CONTROLS_Computer_Boost
+  rotate: false
+  xy: 1442, 187
+  size: 158, 180
+  orig: 158, 192
+  offset: 0, 0
+  index: 70
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1854, 765
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 1
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1854, 765
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 2
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1854, 765
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 3
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1854, 765
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 4
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 590, 964
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 5
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 757, 958
+  size: 71, 191
+  orig: 118, 193
+  offset: 15, 0
+  index: 6
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1808, 572
+  size: 86, 191
+  orig: 118, 193
+  offset: 0, 0
+  index: 7
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1529, 947
+  size: 86, 191
+  orig: 118, 193
+  offset: 0, 0
+  index: 8
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 311, 968
+  size: 86, 192
+  orig: 118, 193
+  offset: 0, 0
+  index: 9
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1808, 377
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 10
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 399, 967
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 11
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 830, 950
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 12
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 918, 950
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 13
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 14
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 15
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 16
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 17
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 18
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 19
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 20
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 21
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 22
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1006, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 23
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1094, 942
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 24
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1182, 930
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 25
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1270, 930
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 26
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1617, 959
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 27
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1705, 959
+  size: 86, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: 28
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1793, 958
+  size: 86, 192
+  orig: 118, 193
+  offset: 0, 0
+  index: 29
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1808, 572
+  size: 86, 191
+  orig: 118, 193
+  offset: 0, 0
+  index: 30
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1808, 572
+  size: 86, 191
+  orig: 118, 193
+  offset: 0, 0
+  index: 31
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1808, 572
+  size: 86, 191
+  orig: 118, 193
+  offset: 0, 0
+  index: 32
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1808, 572
+  size: 86, 191
+  orig: 118, 193
+  offset: 0, 0
+  index: 33
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1881, 958
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 34
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1973, 238
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 35
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1896, 238
+  size: 75, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 36
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1442, 733
+  size: 101, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 37
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1762, 184
+  size: 101, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 38
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1922, 2
+  size: 101, 190
+  orig: 118, 193
+  offset: 17, 0
+  index: 39
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1602, 560
+  size: 101, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 40
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 2, 970
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 41
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 105, 970
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 42
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1602, 366
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 43
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 44
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 45
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 46
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 47
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 48
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 49
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 50
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 51
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 52
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 53
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 54
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 208, 968
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 55
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1705, 377
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 56
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1705, 571
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 57
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1545, 753
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 58
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1648, 765
+  size: 101, 192
+  orig: 118, 193
+  offset: 17, 0
+  index: 59
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1751, 765
+  size: 101, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 60
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 487, 964
+  size: 101, 190
+  orig: 118, 193
+  offset: 17, 0
+  index: 61
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1442, 733
+  size: 101, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 62
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1442, 733
+  size: 101, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 63
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1442, 733
+  size: 101, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 64
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 661, 958
+  size: 94, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 65
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1440, 926
+  size: 87, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 66
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1358, 921
+  size: 80, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 67
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1896, 431
+  size: 72, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 68
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1970, 431
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 69
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1925, 624
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 70
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1952, 817
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 71
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1854, 765
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 72
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1854, 765
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 73
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1854, 765
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 74
+CONTROLS_Computer_Turn
+  rotate: false
+  xy: 1854, 765
+  size: 69, 191
+  orig: 118, 193
+  offset: 17, 0
+  index: 75
+CONTROLS_Words_Computer
+  rotate: false
+  xy: 1865, 194
+  size: 166, 42
+  orig: 166, 42
+  offset: 0, 0
+  index: -1
