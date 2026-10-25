@@ -1,0 +1,1 @@
+{ "core": "dosbox_pure", "buildStart": "2026-05-17T17:38:34+00:00", "buildEnd": "2026-05-17T17:39:33+00:00", "options": { "requireThreads": true, "supportsMouse": true, "useKeyboard": true } }
