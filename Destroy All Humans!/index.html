@@ -1,63 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Destroy All Humans!</title>
-  <style>
-    html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; color: #fff; font-family: sans-serif; }
-    #status { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.2rem; text-align: center; }
-    #game { width: 100vw; height: 100vh; display: none; }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/coi-serviceworker/coi-serviceworker.min.js"></script>
-</head>
-<body>
+<script>
+  const TOTAL_PARTS = 26; 
+  const baseFilename = 'destroy_all_humans.chd.part';
 
-  <div id="status">Loading game parts...</div>
-  <div id="game"></div>
+  async function loadAndAssembleGame() {
+    const status = document.getElementById('status');
+    const chunks = [];
 
-  <script>
-    // Total number of split parts generated in Step 1 (e.g. part000 through part014 = 15 parts)
-    const TOTAL_PARTS = 26; 
-    const baseFilename = 'destroy_all_humans.chd.part';
+    for (let i = 0; i < TOTAL_PARTS; i++) {
+      const partNumber = String(i).padStart(3, '0');
+      const fileUrl = `./${baseFilename}${partNumber}`;
+      status.innerText = `Downloading game assets... (${i + 1}/${TOTAL_PARTS})`;
 
-    async function loadAndAssembleGame() {
-      const status = document.getElementById('status');
-      const chunks = [];
-
-      for (let i = 0; i < TOTAL_PARTS; i++) {
-        const partNumber = String(i).padStart(3, '0');
-        const fileUrl = `./${baseFilename}${partNumber}`;
-        status.innerText = `Downloading game assets... (${i + 1}/${TOTAL_PARTS})`;
-
-        const response = await fetch(fileUrl);
-        if (!response.ok) throw new Error(`Failed to load chunk ${partNumber}`);
-        const buffer = await response.arrayBuffer();
-        chunks.push(buffer);
-      }
-
-      status.innerText = 'Assembling game image...';
-      const fullBlob = new Blob(chunks, { type: 'application/octet-stream' });
-      const blobUrl = URL.createObjectURL(fullBlob);
-
-      // Launch EmulatorJS with assembled blob
-      document.getElementById('status').style.display = 'none';
-      document.getElementById('game').style.display = 'block';
-
-      window.EJS_player = '#game';
-      window.EJS_core = 'play';
-      window.EJS_gameName = 'Destroy All Humans!';
-      window.EJS_gameUrl = blobUrl;
-      window.EJS_pathToData = 'https://cdn.emulatorjs.org/stable/data/';
-
-      const script = document.createElement('script');
-      script.src = 'https://cdn.emulatorjs.org/stable/data/loader.js';
-      document.body.appendChild(script);
+      const response = await fetch(fileUrl);
+      if (!response.ok) throw new Error(`Failed to load chunk ${partNumber}`);
+      const buffer = await response.arrayBuffer();
+      chunks.push(buffer);
     }
 
-    loadAndAssembleGame().catch(err => {
-      document.getElementById('status').innerText = 'Error loading game: ' + err.message;
-    });
-  </script>
+    status.innerText = 'Assembling game image...';
+    const fullBlob = new Blob(chunks, { type: 'application/octet-stream' });
+    const blobUrl = URL.createObjectURL(fullBlob);
 
-</body>
-</html>
+    status.innerText = 'Starting Emulator...';
+    document.getElementById('status').style.display = 'none';
+    document.getElementById('game').style.display = 'block';
+
+    // Configure EmulatorJS with absolute CDN paths
+    window.EJS_player = '#game';
+    window.EJS_core = 'play';
+    window.EJS_gameName = 'Destroy All Humans!';
+    window.EJS_gameUrl = blobUrl;
+    window.EJS_pathToData = 'https://cdn.emulatorjs.org/stable/data/';
+
+    // Load the loader script directly from the CDN
+    const script = document.createElement('script');
+    script.src = 'https://cdn.emulatorjs.org/stable/data/loader.js';
+    document.body.appendChild(script);
+  }
+
+  loadAndAssembleGame().catch(err => {
+    document.getElementById('status').innerText = 'Error loading game: ' + err.message;
+  });
+</script>
