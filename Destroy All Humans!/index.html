@@ -8,6 +8,7 @@
     #status { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.2rem; text-align: center; }
     #game { width: 100vw; height: 100vh; display: none; }
   </style>
+  <!-- Enables SharedArrayBuffer on GitHub Pages for multithreaded PS2 emulation -->
   <script src="https://cdn.jsdelivr.net/npm/coi-serviceworker/coi-serviceworker.min.js"></script>
 </head>
 <body>
@@ -41,14 +42,16 @@
       document.getElementById('status').style.display = 'none';
       document.getElementById('game').style.display = 'block';
 
+      // Local paths pointing directly to your repository's data/ folder
       window.EJS_player = '#game';
       window.EJS_core = 'play';
       window.EJS_gameName = 'Destroy All Humans!';
       window.EJS_gameUrl = blobUrl;
-      window.EJS_pathToData = 'https://cdn.emulatorjs.org/stable/data/';
+      window.EJS_pathToData = 'data/';
 
+      // Loads loader.js from your repo
       const script = document.createElement('script');
-      script.src = 'https://cdn.emulatorjs.org/stable/data/loader.js';
+      script.src = 'data/loader.js';
       document.body.appendChild(script);
     }
 
