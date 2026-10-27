@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://db.onlinewebfonts.com/c/702d8433e65d57e2612d01f1db078242?family=Candara+Bold" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Henry Stickmin Collection</title>
+
+    <!-- Browser Tab Icon (Favicon) -->
+    <link rel="icon" type="image/x-icon" href="images/Icon.ico">
+
+    <!-- Google Fonts: Bebas Neue for tall bold title, Inter for modern clean text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Dark grey background and centered layout */
+        body {
+            background-color: #3e8cce;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            overflow-x: hidden;
+        }
+
+        /* Tall, white, bold title */
+h1 {
+    font-family: 'Candara Bold', sans-serif;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    letter-spacing: 4px;
+    color: #ffffff;
+    -webkit-text-stroke: 5px #000000; /* outline */
+    margin: 0 0 40px 0;
+    text-align: center;
+    line-height: 0.95;
+    max-width: 100%;
+}
+
+        /* Container for the image grid */
+        .image-container {
+            display: flex;
+            gap: clamp(16px, 2.5vw, 32px);
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            padding: 12px;
+        }
+
+        /* Card wrapper link with outline and hover effects */
+        .image-card {
+            display: block;
+            position: relative;
+            width: min(350px, 28vw);
+            min-width: 200px;
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            overflow: hidden; /* Keeps image corners rounded */
+            border: 2px solid #ffffff33;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Expand card slightly and brighten outline on hover */
+        .image-card:hover {
+            transform: scale(1.06);
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Base image styling */
+        .image-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Hover image hidden by default */
+        .image-card .hover-img {
+            opacity: 0;
+        }
+
+        /* Image swap on hover */
+        .image-card:hover .default-img {
+            opacity: 0;
+        }
+
+        .image-card:hover .hover-img {
+            opacity: 1;
+        }
+
+        /* --- Question Mark Button --- */
+        .info-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.65);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.3s ease, background 0.2s ease, transform 0.2s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Reveal question mark button when hovering over the card */
+        .image-card:hover .info-btn {
+            opacity: 1;
+        }
+
+        /* Question mark button hover effect */
+        .info-btn:hover {
+            background: #ffffff;
+            color: #1e1e1e;
+            transform: scale(1.15);
+        }
+
+        /* --- Modal Popup Window --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        /* Show modal */
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: #2a2a2a;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 32px;
+            max-width: 650px;
+            width: 100%;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        /* Close X button */
+        .close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: transparent;
+            border: none;
+            color: #aaaaaa;
+            font-size: 28px;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+
+        .close-btn:hover {
+            color: #ffffff;
+        }
+
+        /* Body layout inside modal (Text on Left, Image on Right) */
+        .modal-body {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .modal-text {
+            flex: 1;
+        }
+
+        .modal-text h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin: 0 0 12px 0;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .modal-text p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .modal-image-wrap {
+            flex: 0 0 180px;
+            width: 180px;
+            height: 180px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .modal-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive adjustment for small phone screens */
+        @media (max-width: 550px) {
+            .modal-body {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .modal-image-wrap {
+                flex: none;
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>The Henry Stickmin Collection</h1>
+
+    <div class="image-container">
+        <!-- ROW 1 -->
+        <!-- Card 1 -->
+        <a href="pit.html" class="image-card">
+            <button class="info-btn" aria-label="More Info" onclick="openModal(event, 'Henry Stickmin: Crossing the Pit', 'Crossing the Pit is a movie/game created by PuffballsUnited, serving as a prototype for the Henry Stickmin series. It was uploaded onto Newgrounds on December 16, 2007. - The Henry Stickmin Wiki, fandom.com', 'images/pit.png')">?</button>
+            <img src="images/pit.png" alt="Crossing the Pit" class="default-img">
+            <img src="images/pit.png" alt="Crossing the Pit Hover" class="hover-img">
+        </a>
+
+        <!-- Card 2 -->
+        <a href="bank.html" class="image-card">
+            <button class="info-btn" aria-label="More Info" onclick="openModal(event, 'Henry Stickmin: Breaking the Bank', 'Breaking the Bank is the first game in the Henry Stickmin series, of which it serves as the pilot episode and prologue. - The Henry Stickmin Wiki, fandom.com', 'images/bank.png')">?</button>
+            <img src="images/bank.png" alt="Granule" class="default-img">
+            <img src="images/bank.png" alt="Granule Hover" class="hover-img">
+        </a>
+
+        <!-- Card 3 -->
+        <a href="prison.html" class="image-card">
+            <button class="info-btn" aria-label="More Info" onclick="openModal(event, 'Henry Stickmin: Escaping the Prison', 'Escaping the Prison is the second game in the Henry Stickmin series. It is the sequel to Breaking the Bank, and the prequel to Stealing the Diamond, and is named as Episode 1 of the Henry Stickmin story. It is one of the most popular of the series, with over 3 million plays on Newgrounds. It contains a total of 36 choices to make, which is 6 times the amount as the previous game. - The Henry Stickmin Wiki, fandom.com', 'images/prison.png')">?</button>
+            <img src="images/prison.png" alt="people playground" class="default-img">
+            <img src="images/prison.png" alt="people playground Hover" class="hover-img">
+        </a>
+
+        <!-- ROW 2 -->
+        <!-- Card 4 -->
+        <a href="diamond.html" class="image-card">
+            <button class="info-btn" aria-label="More Info" onclick="openModal(event, 'Henry Stickmin: Stealing the Diamond', 'Stealing the Diamond is the third game in the Henry Stickmin series. It takes place after Escaping the Prison and before Infiltrating the Airship, and is considered Episode 2 of The Henry Stickmin Collection. - The Henry Stickmin Wiki, fandom.com', 'images/diamond.png')">?</button>
+            <img src="images/diamond.png" alt="Game 4" class="default-img">
+            <img src="images/diamond.png" alt="Game 4 Hover" class="hover-img">
+        </a>
+
+        <!-- Card 5 -->
+        <a href="ship.html" class="image-card">
+            <button class="info-btn" aria-label="More Info" onclick="openModal(event, 'Henry Stickmin: Infiltrating the Airship', 'Infiltrating the Airship is the fourth game in the Henry Stickmin series. It is the sequel to Stealing the Diamond and takes place before Fleeing the Complex and is named as Episode 3 of the Henry Stickmin story. The game has four different endings and one fake ending. - The Henry Stickmin Wiki, fandom.com', 'images/ship.png')">?</button>
+            <img src="images/ship.png" alt="Game 5" class="default-img">
+            <img src="images/ship.png" alt="Game 5 Hover" class="hover-img">
+        </a>
+
+        <!-- Card 6 -->
+        <a href="complex.html" class="image-card">
+            <button class="info-btn" aria-label="More Info" onclick="openModal(event, 'Henry Stickmin: Fleeing the Complex', 'Fleeing the Complex is the fifth game in the Henry Stickmin point-and-click adventure series. Developed by PuffballsUnited, the original Flash game was released on 12 November 2015. It later served as Episode 4 of The Henry Stickmin Collection, a comprehensive remaster published by Innersloth on 7 August 2020. - The Henry Stickmin Wiki, fandom.com', 'images/complex.png')">?</button>
+            <img src="images/complex.png" alt="Game 6" class="default-img">
+            <img src="images/complex.png" alt="Game 6 Hover" class="hover-img">
+        </a>
+    </div>
+
+    <!-- Popup Modal Window -->
+    <div id="modalOverlay" class="modal-overlay" onclick="closeModalOnBackdrop(event)">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div class="modal-body">
+                <div class="modal-text">
+                    <h2 id="modalTitle">TITLE</h2>
+                    <p id="modalDescription">Description goes here...</p>
+                </div>
+                <div class="modal-image-wrap">
+                    <img id="modalImg" src="" alt="Popup Preview Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalImg = document.getElementById('modalImg');
+
+        // Function to open modal with specific content
+        function openModal(event, title, description, hoverImgSrc) {
+            // Stop link navigation and click event bubbling
+            event.preventDefault();
+            event.stopPropagation();
+
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modalImg.src = hoverImgSrc;
+
+            modalOverlay.classList.add('active');
+        }
+
+        // Function to close modal
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+        }
+
+        // Close modal when clicking outside the modal content box
+        function closeModalOnBackdrop(event) {
+            if (event.target === modalOverlay) {
+                closeModal();
+            }
+        }
+
+        // Close modal when pressing the Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
+The Henry Stickmin Collection by Blaster aka Ethan; Games by Puffballs United.
