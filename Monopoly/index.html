@@ -1,307 +1,324 @@
-<div class="board">
-  <!-- CENTER DISPLAY -->
-  <div class="center">
-    <div id="mensaje"></div>
-    <div class="title"><h1>PHPoly</h1></div>
-    <div class="botones">
-      <input type="button" id="comprar" value="" />
-      <input type="button" id="pasar" value="" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHPoly</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style_general.css">
+  <link rel="stylesheet" href="style_index.css">
+  <link rel="stylesheet" href="style_dice.css">
+  <script src="jquery-3.6.0.slim.js"></script>
+  <script type="module" src="./scripts/tablero.js"></script>
+  <script src="./scripts/rooldice.js"></script>
+</head>
+<body>
+  <div class="board">
+    <!-- CENTER DISPLAY -->
+    <div class="center">
+      <div id="mensaje"></div>
+      <div class="title"><h1>PHPoly</h1></div>
+      <div class="botones">
+        <input type="button" id="comprar" value="" />
+        <input type="button" id="pasar" value="" />
+      </div>
     </div>
-  </div>
 
-  <!-- CORNER 0: GO -->
-  <div class="space corner go">
-    <div class="container">
-      <div class="instructions">Collect ₱200 salary as you pass</div>
-      <div class="go-word">GO</div>
+    <!-- CORNER 0: GO -->
+    <div class="space corner go">
+      <div class="container">
+        <div class="instructions">Collect ₱200 salary as you pass</div>
+        <div class="go-word">GO</div>
+      </div>
+      <div class="arrow">⇦</div>
     </div>
-    <div class="arrow">⇦</div>
-  </div>
 
-  <!-- BOTTOM ROW (Pos 1 - 9) -->
-  <div class="row horizontal-row bottom-row">
-    <div class="space property light-blue">
-      <div class="container">
-        <div class="color-bar light-blue"></div>
-        <div class="name">Connecticut Avenue</div>
-        <div class="price">120 ₱</div>
-      </div>
-    </div>
-    <div class="space property light-blue">
-      <div class="container">
-        <div class="color-bar light-blue"></div>
-        <div class="name">Vermont Avenue</div>
-        <div class="price">100 ₱</div>
-      </div>
-    </div>
-    <div class="space chance">
-      <div class="container">
-        <div class="name">Chance</div>
-        <div class="drawing">?</div>
-      </div>
-    </div>
-    <div class="space property light-blue">
-      <div class="container">
-        <div class="color-bar light-blue"></div>
-        <div class="name">Oriental Avenue</div>
-        <div class="price">100 ₱</div>
-      </div>
-    </div>
-    <div class="space railroad">
-      <div class="container">
-        <div class="name">Reading Railroad</div>
-        <div class="price">200 ₱</div>
-      </div>
-    </div>
-    <div class="space fee income-tax">
-      <div class="container">
-        <div class="name">Income Tax</div>
-        <div class="instructions">Pay 200 ₱</div>
-      </div>
-    </div>
-    <div class="space property brown">
-      <div class="container">
-        <div class="color-bar brown"></div>
-        <div class="name">Baltic Avenue</div>
-        <div class="price">60 ₱</div>
-      </div>
-    </div>
-    <div class="space community-chest">
-      <div class="container">
-        <div class="name">Community Chest</div>
-      </div>
-    </div>
-    <div class="space property brown">
-      <div class="container">
-        <div class="color-bar brown"></div>
-        <div class="name">Mediterranean Avenue</div>
-        <div class="price">60 ₱</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CORNER 1: JAIL -->
-  <div class="space corner jail">
-    <div class="just">Just</div>
-    <div class="drawing">
-      <div class="container">
-        <div class="name">In</div>
-        <div class="window">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="person">👤</div>
+    <!-- BOTTOM ROW (Pos 1 - 9) -->
+    <div class="row horizontal-row bottom-row">
+      <div class="space property light-blue">
+        <div class="container">
+          <div class="color-bar light-blue"></div>
+          <div class="name">Connecticut Avenue</div>
+          <div class="price">120 ₱</div>
         </div>
+      </div>
+      <div class="space property light-blue">
+        <div class="container">
+          <div class="color-bar light-blue"></div>
+          <div class="name">Vermont Avenue</div>
+          <div class="price">100 ₱</div>
+        </div>
+      </div>
+      <div class="space chance">
+        <div class="container">
+          <div class="name">Chance</div>
+          <div class="drawing">?</div>
+        </div>
+      </div>
+      <div class="space property light-blue">
+        <div class="container">
+          <div class="color-bar light-blue"></div>
+          <div class="name">Oriental Avenue</div>
+          <div class="price">100 ₱</div>
+        </div>
+      </div>
+      <div class="space railroad">
+        <div class="container">
+          <div class="name">Reading Railroad</div>
+          <div class="price">200 ₱</div>
+        </div>
+      </div>
+      <div class="space fee income-tax">
+        <div class="container">
+          <div class="name">Income Tax</div>
+          <div class="instructions">Pay 200 ₱</div>
+        </div>
+      </div>
+      <div class="space property brown">
+        <div class="container">
+          <div class="color-bar brown"></div>
+          <div class="name">Baltic Avenue</div>
+          <div class="price">60 ₱</div>
+        </div>
+      </div>
+      <div class="space community-chest">
+        <div class="container">
+          <div class="name">Community Chest</div>
+        </div>
+      </div>
+      <div class="space property brown">
+        <div class="container">
+          <div class="color-bar brown"></div>
+          <div class="name">Mediterranean Avenue</div>
+          <div class="price">60 ₱</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORNER 1: JAIL -->
+    <div class="space corner jail">
+      <div class="just">Just</div>
+      <div class="drawing">
+        <div class="container">
+          <div class="name">In</div>
+          <div class="window">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="person">👤</div>
+          </div>
+          <div class="name">Jail</div>
+        </div>
+      </div>
+      <div class="visiting">Visiting</div>
+    </div>
+
+    <!-- LEFT ROW (Pos 11 - 19) -->
+    <div class="row vertical-row left-row">
+      <div class="space property orange">
+        <div class="container">
+          <div class="color-bar orange"></div>
+          <div class="name">New York Avenue</div>
+          <div class="price">200 ₱</div>
+        </div>
+      </div>
+      <div class="space property orange">
+        <div class="container">
+          <div class="color-bar orange"></div>
+          <div class="name">Tennessee Avenue</div>
+          <div class="price">180 ₱</div>
+        </div>
+      </div>
+      <div class="space community-chest">
+        <div class="container">
+          <div class="name">Community Chest</div>
+        </div>
+      </div>
+      <div class="space property orange">
+        <div class="container">
+          <div class="color-bar orange"></div>
+          <div class="name">St. James Place</div>
+          <div class="price">180 ₱</div>
+        </div>
+      </div>
+      <div class="space railroad">
+        <div class="container">
+          <div class="name">Pennsylvania Railroad</div>
+          <div class="price">200 ₱</div>
+        </div>
+      </div>
+      <div class="space property purple">
+        <div class="container">
+          <div class="color-bar purple"></div>
+          <div class="name">Virginia Avenue</div>
+          <div class="price">160 ₱</div>
+        </div>
+      </div>
+      <div class="space property purple">
+        <div class="container">
+          <div class="color-bar purple"></div>
+          <div class="name">States Avenue</div>
+          <div class="price">140 ₱</div>
+        </div>
+      </div>
+      <div class="space utility electric-company">
+        <div class="container">
+          <div class="name">Electric Company</div>
+          <div class="price">150 ₱</div>
+        </div>
+      </div>
+      <div class="space property purple">
+        <div class="container">
+          <div class="color-bar purple"></div>
+          <div class="name">St. Charles Place</div>
+          <div class="price">140 ₱</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORNER 2: FREE PARKING -->
+    <div class="space corner free-parking">
+      <div class="container">
+        <div class="name">Free</div>
+        <div class="drawing">🚗</div>
+        <div class="name">Parking</div>
+      </div>
+    </div>
+
+    <!-- TOP ROW (Pos 21 - 29) -->
+    <div class="row horizontal-row top-row">
+      <div class="space property red">
+        <div class="container">
+          <div class="color-bar red"></div>
+          <div class="name">Kentucky Avenue</div>
+          <div class="price">220 ₱</div>
+        </div>
+      </div>
+      <div class="space chance">
+        <div class="container">
+          <div class="name">Chance</div>
+          <div class="drawing">?</div>
+        </div>
+      </div>
+      <div class="space property red">
+        <div class="container">
+          <div class="color-bar red"></div>
+          <div class="name">Indiana Avenue</div>
+          <div class="price">220 ₱</div>
+        </div>
+      </div>
+      <div class="space property red">
+        <div class="container">
+          <div class="color-bar red"></div>
+          <div class="name">Illinois Avenue</div>
+          <div class="price">240 ₱</div>
+        </div>
+      </div>
+      <div class="space railroad">
+        <div class="container">
+          <div class="name">B. & O. Railroad</div>
+          <div class="price">200 ₱</div>
+        </div>
+      </div>
+      <div class="space property yellow">
+        <div class="container">
+          <div class="color-bar yellow"></div>
+          <div class="name">Atlantic Avenue</div>
+          <div class="price">260 ₱</div>
+        </div>
+      </div>
+      <div class="space property yellow">
+        <div class="container">
+          <div class="color-bar yellow"></div>
+          <div class="name">Ventnor Avenue</div>
+          <div class="price">260 ₱</div>
+        </div>
+      </div>
+      <div class="space utility waterworks">
+        <div class="container">
+          <div class="name">Water Works</div>
+          <div class="price">150 ₱</div>
+        </div>
+      </div>
+      <div class="space property yellow">
+        <div class="container">
+          <div class="color-bar yellow"></div>
+          <div class="name">Marvin Gardens</div>
+          <div class="price">280 ₱</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORNER 3: GO TO JAIL -->
+    <div class="space corner go-to-jail">
+      <div class="container">
+        <div class="name">Go To</div>
+        <div class="drawing">👮</div>
         <div class="name">Jail</div>
       </div>
     </div>
-    <div class="visiting">Visiting</div>
-  </div>
 
-  <!-- LEFT ROW (Pos 11 - 19) -->
-  <div class="row vertical-row left-row">
-    <div class="space property orange">
-      <div class="container">
-        <div class="color-bar orange"></div>
-        <div class="name">New York Avenue</div>
-        <div class="price">200 ₱</div>
+    <!-- RIGHT ROW (Pos 31 - 39) -->
+    <div class="row vertical-row right-row">
+      <div class="space property green">
+        <div class="container">
+          <div class="color-bar green"></div>
+          <div class="name">Pacific Avenue</div>
+          <div class="price">300 ₱</div>
+        </div>
       </div>
-    </div>
-    <div class="space property orange">
-      <div class="container">
-        <div class="color-bar orange"></div>
-        <div class="name">Tennessee Avenue</div>
-        <div class="price">180 ₱</div>
+      <div class="space property green">
+        <div class="container">
+          <div class="color-bar green"></div>
+          <div class="name">North Carolina Avenue</div>
+          <div class="price">300 ₱</div>
+        </div>
       </div>
-    </div>
-    <div class="space community-chest">
-      <div class="container">
-        <div class="name">Community Chest</div>
+      <div class="space community-chest">
+        <div class="container">
+          <div class="name">Community Chest</div>
+        </div>
       </div>
-    </div>
-    <div class="space property orange">
-      <div class="container">
-        <div class="color-bar orange"></div>
-        <div class="name">St. James Place</div>
-        <div class="price">180 ₱</div>
+      <div class="space property green">
+        <div class="container">
+          <div class="color-bar green"></div>
+          <div class="name">Pennsylvania Avenue</div>
+          <div class="price">320 ₱</div>
+        </div>
       </div>
-    </div>
-    <div class="space railroad">
-      <div class="container">
-        <div class="name">Pennsylvania Railroad</div>
-        <div class="price">200 ₱</div>
+      <div class="space railroad">
+        <div class="container">
+          <div class="name">Short Line Railroad</div>
+          <div class="price">200 ₱</div>
+        </div>
       </div>
-    </div>
-    <div class="space property purple">
-      <div class="container">
-        <div class="color-bar purple"></div>
-        <div class="name">Virginia Avenue</div>
-        <div class="price">160 ₱</div>
+      <div class="space chance">
+        <div class="container">
+          <div class="name">Chance</div>
+          <div class="drawing">?</div>
+        </div>
       </div>
-    </div>
-    <div class="space property purple">
-      <div class="container">
-        <div class="color-bar purple"></div>
-        <div class="name">States Avenue</div>
-        <div class="price">140 ₱</div>
+      <div class="space property dark-blue">
+        <div class="container">
+          <div class="color-bar dark-blue"></div>
+          <div class="name">Park Place</div>
+          <div class="price">350 ₱</div>
+        </div>
       </div>
-    </div>
-    <div class="space utility electric-company">
-      <div class="container">
-        <div class="name">Electric Company</div>
-        <div class="price">150 ₱</div>
+      <div class="space fee luxury-tax">
+        <div class="container">
+          <div class="name">Luxury Tax</div>
+          <div class="instructions">Pay 100 ₱</div>
+        </div>
       </div>
-    </div>
-    <div class="space property purple">
-      <div class="container">
-        <div class="color-bar purple"></div>
-        <div class="name">St. Charles Place</div>
-        <div class="price">140 ₱</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CORNER 2: FREE PARKING -->
-  <div class="space corner free-parking">
-    <div class="container">
-      <div class="name">Free</div>
-      <div class="drawing">🚗</div>
-      <div class="name">Parking</div>
-    </div>
-  </div>
-
-  <!-- TOP ROW (Pos 21 - 29) -->
-  <div class="row horizontal-row top-row">
-    <div class="space property red">
-      <div class="container">
-        <div class="color-bar red"></div>
-        <div class="name">Kentucky Avenue</div>
-        <div class="price">220 ₱</div>
-      </div>
-    </div>
-    <div class="space chance">
-      <div class="container">
-        <div class="name">Chance</div>
-        <div class="drawing">?</div>
-      </div>
-    </div>
-    <div class="space property red">
-      <div class="container">
-        <div class="color-bar red"></div>
-        <div class="name">Indiana Avenue</div>
-        <div class="price">220 ₱</div>
-      </div>
-    </div>
-    <div class="space property red">
-      <div class="container">
-        <div class="color-bar red"></div>
-        <div class="name">Illinois Avenue</div>
-        <div class="price">240 ₱</div>
-      </div>
-    </div>
-    <div class="space railroad">
-      <div class="container">
-        <div class="name">B. & O. Railroad</div>
-        <div class="price">200 ₱</div>
-      </div>
-    </div>
-    <div class="space property yellow">
-      <div class="container">
-        <div class="color-bar yellow"></div>
-        <div class="name">Atlantic Avenue</div>
-        <div class="price">260 ₱</div>
-      </div>
-    </div>
-    <div class="space property yellow">
-      <div class="container">
-        <div class="color-bar yellow"></div>
-        <div class="name">Ventnor Avenue</div>
-        <div class="price">260 ₱</div>
-      </div>
-    </div>
-    <div class="space utility waterworks">
-      <div class="container">
-        <div class="name">Water Works</div>
-        <div class="price">150 ₱</div>
-      </div>
-    </div>
-    <div class="space property yellow">
-      <div class="container">
-        <div class="color-bar yellow"></div>
-        <div class="name">Marvin Gardens</div>
-        <div class="price">280 ₱</div>
+      <div class="space property dark-blue">
+        <div class="container">
+          <div class="color-bar dark-blue"></div>
+          <div class="name">Boardwalk</div>
+          <div class="price">400 ₱</div>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- CORNER 3: GO TO JAIL -->
-  <div class="space corner go-to-jail">
-    <div class="container">
-      <div class="name">Go To</div>
-      <div class="drawing">👮</div>
-      <div class="name">Jail</div>
-    </div>
-  </div>
-
-  <!-- RIGHT ROW (Pos 31 - 39) -->
-  <div class="row vertical-row right-row">
-    <div class="space property green">
-      <div class="container">
-        <div class="color-bar green"></div>
-        <div class="name">Pacific Avenue</div>
-        <div class="price">300 ₱</div>
-      </div>
-    </div>
-    <div class="space property green">
-      <div class="container">
-        <div class="color-bar green"></div>
-        <div class="name">North Carolina Avenue</div>
-        <div class="price">300 ₱</div>
-      </div>
-    </div>
-    <div class="space community-chest">
-      <div class="container">
-        <div class="name">Community Chest</div>
-      </div>
-    </div>
-    <div class="space property green">
-      <div class="container">
-        <div class="color-bar green"></div>
-        <div class="name">Pennsylvania Avenue</div>
-        <div class="price">320 ₱</div>
-      </div>
-    </div>
-    <div class="space railroad">
-      <div class="container">
-        <div class="name">Short Line Railroad</div>
-        <div class="price">200 ₱</div>
-      </div>
-    </div>
-    <div class="space chance">
-      <div class="container">
-        <div class="name">Chance</div>
-        <div class="drawing">?</div>
-      </div>
-    </div>
-    <div class="space property dark-blue">
-      <div class="container">
-        <div class="color-bar dark-blue"></div>
-        <div class="name">Park Place</div>
-        <div class="price">350 ₱</div>
-      </div>
-    </div>
-    <div class="space fee luxury-tax">
-      <div class="container">
-        <div class="name">Luxury Tax</div>
-        <div class="instructions">Pay 100 ₱</div>
-      </div>
-    </div>
-    <div class="space property dark-blue">
-      <div class="container">
-        <div class="color-bar dark-blue"></div>
-        <div class="name">Boardwalk</div>
-        <div class="price">400 ₱</div>
-      </div>
-    </div>
-  </div>
-</div>
+</body>
+</html>
