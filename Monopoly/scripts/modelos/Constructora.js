@@ -1,307 +1,84 @@
-<div class="board">
-  <!-- CENTER DISPLAY -->
-  <div class="center">
-    <div id="mensaje"></div>
-    <div class="title"><h1>PHPoly</h1></div>
-    <div class="botones">
-      <input type="button" id="comprar" value="" />
-      <input type="button" id="pasar" value="" />
-    </div>
-  </div>
+import Casilla from "./Casilla.js";
+import Jugador from "./Jugador.js";
 
-  <!-- CORNER 0: GO -->
-  <div class="space corner go">
-    <div class="container">
-      <div class="instructions">Collect ₱200 salary as you pass</div>
-      <div class="go-word">GO</div>
-    </div>
-    <div class="arrow">⇦</div>
-  </div>
+export default class Constructora {
+  static construirCasillas() {
+    return construirObjetosCasillas(extraerCasillas());
 
-  <!-- BOTTOM ROW (Pos 1 - 9) -->
-  <div class="row horizontal-row bottom-row">
-    <div class="space property light-blue">
-      <div class="container">
-        <div class="color-bar light-blue"></div>
-        <div class="name">Connecticut Avenue</div>
-        <div class="price">₱120</div>
-      </div>
-    </div>
-    <div class="space property light-blue">
-      <div class="container">
-        <div class="color-bar light-blue"></div>
-        <div class="name">Vermont Avenue</div>
-        <div class="price">₱100</div>
-      </div>
-    </div>
-    <div class="space chance">
-      <div class="container">
-        <div class="name">Chance</div>
-        <div class="drawing">?</div>
-      </div>
-    </div>
-    <div class="space property light-blue">
-      <div class="container">
-        <div class="color-bar light-blue"></div>
-        <div class="name">Oriental Avenue</div>
-        <div class="price">₱100</div>
-      </div>
-    </div>
-    <div class="space railroad">
-      <div class="container">
-        <div class="name">Reading Railroad</div>
-        <div class="price">₱200</div>
-      </div>
-    </div>
-    <div class="space fee income-tax">
-      <div class="container">
-        <div class="name">Income Tax</div>
-        <div class="instructions">Pay ₱200</div>
-      </div>
-    </div>
-    <div class="space property brown">
-      <div class="container">
-        <div class="color-bar brown"></div>
-        <div class="name">Baltic Avenue</div>
-        <div class="price">₱60</div>
-      </div>
-    </div>
-    <div class="space community-chest">
-      <div class="container">
-        <div class="name">Community Chest</div>
-      </div>
-    </div>
-    <div class="space property brown">
-      <div class="container">
-        <div class="color-bar brown"></div>
-        <div class="name">Mediterranean Avenue</div>
-        <div class="price">₱60</div>
-      </div>
-    </div>
-  </div>
+    function extraerCasillas() {
+      var corners = document.getElementsByClassName("corner");
+      var hBottomRow = invertirNodeList(
+        document
+          .getElementsByClassName("bottom-row")[0]
+          .getElementsByClassName("space")
+      );
+      var vLeftRow = invertirNodeList(
+        document
+          .getElementsByClassName("left-row")[0]
+          .getElementsByClassName("space")
+      );
+      var hTopRow = document
+        .getElementsByClassName("top-row")[0]
+        .getElementsByClassName("space");
+      var vRightRow = document
+        .getElementsByClassName("right-row")[0]
+        .getElementsByClassName("space");
 
-  <!-- CORNER 1: JAIL -->
-  <div class="space corner jail">
-    <div class="just">Just</div>
-    <div class="drawing">
-      <div class="container">
-        <div class="name">In</div>
-        <div class="window">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="person">👤</div>
-        </div>
-        <div class="name">Jail</div>
-      </div>
-    </div>
-    <div class="visiting">Visiting</div>
-  </div>
+      var casillasOrdenadas = [];
 
-  <!-- LEFT ROW (Pos 11 - 19) -->
-  <div class="row vertical-row left-row">
-    <div class="space property orange">
-      <div class="container">
-        <div class="color-bar orange"></div>
-        <div class="name">New York Avenue</div>
-        <div class="price">₱200</div>
-      </div>
-    </div>
-    <div class="space property orange">
-      <div class="container">
-        <div class="color-bar orange"></div>
-        <div class="name">Tennessee Avenue</div>
-        <div class="price">₱180</div>
-      </div>
-    </div>
-    <div class="space community-chest">
-      <div class="container">
-        <div class="name">Community Chest</div>
-      </div>
-    </div>
-    <div class="space property orange">
-      <div class="container">
-        <div class="color-bar orange"></div>
-        <div class="name">St. James Place</div>
-        <div class="price">₱180</div>
-      </div>
-    </div>
-    <div class="space railroad">
-      <div class="container">
-        <div class="name">Pennsylvania Railroad</div>
-        <div class="price">₱200</div>
-      </div>
-    </div>
-    <div class="space property purple">
-      <div class="container">
-        <div class="color-bar purple"></div>
-        <div class="name">Virginia Avenue</div>
-        <div class="price">₱160</div>
-      </div>
-    </div>
-    <div class="space property purple">
-      <div class="container">
-        <div class="color-bar purple"></div>
-        <div class="name">States Avenue</div>
-        <div class="price">₱140</div>
-      </div>
-    </div>
-    <div class="space utility electric-company">
-      <div class="container">
-        <div class="name">Electric Company</div>
-        <div class="price">₱150</div>
-      </div>
-    </div>
-    <div class="space property purple">
-      <div class="container">
-        <div class="color-bar purple"></div>
-        <div class="name">St. Charles Place</div>
-        <div class="price">₱140</div>
-      </div>
-    </div>
-  </div>
+      casillasOrdenadas.push(corners[0]);
+      hBottomRow.forEach((e) => casillasOrdenadas.push(e));
+      casillasOrdenadas.push(corners[1]);
+      vLeftRow.forEach((e) => casillasOrdenadas.push(e));
+      casillasOrdenadas.push(corners[2]);
+      [...hTopRow].forEach((e) => casillasOrdenadas.push(e));
+      casillasOrdenadas.push(corners[3]);
+      [...vRightRow].forEach((e) => casillasOrdenadas.push(e));
 
-  <!-- CORNER 2: FREE PARKING -->
-  <div class="space corner free-parking">
-    <div class="container">
-      <div class="name">Free</div>
-      <div class="drawing">🚗</div>
-      <div class="name">Parking</div>
-    </div>
-  </div>
+      return casillasOrdenadas;
+    }
 
-  <!-- TOP ROW (Pos 21 - 29) -->
-  <div class="row horizontal-row top-row">
-    <div class="space property red">
-      <div class="container">
-        <div class="color-bar red"></div>
-        <div class="name">Kentucky Avenue</div>
-        <div class="price">₱220</div>
-      </div>
-    </div>
-    <div class="space chance">
-      <div class="container">
-        <div class="name">Chance</div>
-        <div class="drawing">?</div>
-      </div>
-    </div>
-    <div class="space property red">
-      <div class="container">
-        <div class="color-bar red"></div>
-        <div class="name">Indiana Avenue</div>
-        <div class="price">₱220</div>
-      </div>
-    </div>
-    <div class="space property red">
-      <div class="container">
-        <div class="color-bar red"></div>
-        <div class="name">Illinois Avenue</div>
-        <div class="price">₱240</div>
-      </div>
-    </div>
-    <div class="space railroad">
-      <div class="container">
-        <div class="name">B. & O. Railroad</div>
-        <div class="price">₱200</div>
-      </div>
-    </div>
-    <div class="space property yellow">
-      <div class="container">
-        <div class="color-bar yellow"></div>
-        <div class="name">Atlantic Avenue</div>
-        <div class="price">₱260</div>
-      </div>
-    </div>
-    <div class="space property yellow">
-      <div class="container">
-        <div class="color-bar yellow"></div>
-        <div class="name">Ventnor Avenue</div>
-        <div class="price">₱260</div>
-      </div>
-    </div>
-    <div class="space utility waterworks">
-      <div class="container">
-        <div class="name">Water Works</div>
-        <div class="price">₱150</div>
-      </div>
-    </div>
-    <div class="space property yellow">
-      <div class="container">
-        <div class="color-bar yellow"></div>
-        <div class="name">Marvin Gardens</div>
-        <div class="price">₱280</div>
-      </div>
-    </div>
-  </div>
+    function invertirNodeList(nodeList) {
+      return [...nodeList].reverse();
+    }
 
-  <!-- CORNER 3: GO TO JAIL -->
-  <div class="space corner go-to-jail">
-    <div class="container">
-      <div class="name">Go To</div>
-      <div class="drawing">👮</div>
-      <div class="name">Jail</div>
-    </div>
-  </div>
+    function construirObjetosCasillas(arr) {
+      let objetos = [];
+      arr.forEach((e) => objetos.push(new Casilla(e)));
+      return objetos;
+    }
+  }
 
-  <!-- RIGHT ROW (Pos 31 - 39) -->
-  <div class="row vertical-row right-row">
-    <div class="space property green">
-      <div class="container">
-        <div class="color-bar green"></div>
-        <div class="name">Pacific Avenue</div>
-        <div class="price">₱300</div>
-      </div>
-    </div>
-    <div class="space property green">
-      <div class="container">
-        <div class="color-bar green"></div>
-        <div class="name">North Carolina Avenue</div>
-        <div class="price">₱300</div>
-      </div>
-    </div>
-    <div class="space community-chest">
-      <div class="container">
-        <div class="name">Community Chest</div>
-      </div>
-    </div>
-    <div class="space property green">
-      <div class="container">
-        <div class="color-bar green"></div>
-        <div class="name">Pennsylvania Avenue</div>
-        <div class="price">₱320</div>
-      </div>
-    </div>
-    <div class="space railroad">
-      <div class="container">
-        <div class="name">Short Line Railroad</div>
-        <div class="price">₱200</div>
-      </div>
-    </div>
-    <div class="space chance">
-      <div class="container">
-        <div class="name">Chance</div>
-        <div class="drawing">?</div>
-      </div>
-    </div>
-    <div class="space property dark-blue">
-      <div class="container">
-        <div class="color-bar dark-blue"></div>
-        <div class="name">Park Place</div>
-        <div class="price">₱350</div>
-      </div>
-    </div>
-    <div class="space fee luxury-tax">
-      <div class="container">
-        <div class="name">Luxury Tax</div>
-        <div class="instructions">Pay ₱100</div>
-      </div>
-    </div>
-    <div class="space property dark-blue">
-      <div class="container">
-        <div class="color-bar dark-blue"></div>
-        <div class="name">Boardwalk</div>
-        <div class="price">₱400</div>
-      </div>
-    </div>
-  </div>
-</div>
+  static construirJugadores() {
+    let tarjetas = document.getElementsByClassName("tarjeta");
+    let localPlayers = JSON.parse(localStorage.getItem("phpoly_players"));
+    let jugadores = [];
+
+    for (let i = 0; i < tarjetas.length; i++) {
+      if (localPlayers && localPlayers[i]) {
+        let pData = localPlayers[i];
+        let tarjeta = tarjetas[i];
+
+        let nombreDiv = tarjeta.querySelector(".nombre");
+        if (nombreDiv && pData.name) nombreDiv.textContent = pData.name;
+
+        let img = tarjeta.querySelector(".foto img");
+        if (img && pData.icon) img.src = `./static/iconos/${pData.icon}.png`;
+
+        let dineroDiv = tarjeta.querySelector(".dinero");
+        if (dineroDiv && pData.money) dineroDiv.textContent = `${pData.money} ₱`;
+
+        let posicionDiv = tarjeta.querySelector(".posicion");
+        if (posicionDiv) posicionDiv.textContent = "0";
+
+        let vivoDiv = tarjeta.querySelector(".vivo");
+        if (vivoDiv) vivoDiv.textContent = "1";
+      }
+
+      let jugador = new Jugador(tarjetas[i]);
+      jugadores.push(jugador);
+    }
+
+    return jugadores;
+  }
+}
