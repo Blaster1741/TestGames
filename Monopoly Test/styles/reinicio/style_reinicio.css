@@ -1,0 +1,44 @@
+.player-count-selector {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.player-count-selector select, .type-select {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+}
+
+.icon-label {
+  border-color: transparent;
+  background-repeat: no-repeat;
+  background-color: #ffffff95;
+  background-origin: content-box;
+  border: 0.2rem solid white;
+  border-radius: 20px;
+  background-size: contain;
+  height: 1.8em;
+  width: 1.8em;
+  display: inline-block;
+  padding: 2%;
+  margin: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Updated 8 Piece Image Icons */
+.icon-iron { background-image: url("../../static/iconos/iron.png"); }
+.icon-cart { background-image: url("../../static/iconos/cart.png"); }
+.icon-dog { background-image: url("../../static/iconos/dog.png"); }
+.icon-car { background-image: url("../../static/iconos/car.png"); }
+.icon-hat { background-image: url("../../static/iconos/hat.png"); }
+.icon-ship { background-image: url("../../static/iconos/ship.png"); }
+.icon-shoe { background-image: url("../../static/iconos/shoe.png"); }
+.icon-thimble { background-image: url("../../static/iconos/thimble.png"); }
+
+input[type="radio"]:checked + .icon-label {
+  filter: invert(75%);
+  border-color: #000;
+}
