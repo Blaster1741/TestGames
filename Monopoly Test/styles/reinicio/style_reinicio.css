@@ -1,14 +1,83 @@
+#form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
 .player-count-selector {
   color: white;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 12px;
 }
 
 .player-count-selector select, .type-select {
-  padding: 5px 10px;
+  padding: 6px 12px;
   font-size: 1rem;
   border-radius: 6px;
   border: none;
+  background: #ffffff;
+  color: #080808;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 90%;
+  max-width: 1100px;
+}
+
+.jugador {
+  border-radius: 20px;
+  padding: 15px;
+  width: 45%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Slot colors */
+.morado   { background-color: #6f6280; }
+.rosa     { background-color: #e8637f; }
+.amarillo { background-color: #ebd160; }
+.verde    { background-color: #79d9a3; }
+.azul     { background-color: #2df9ff; }
+.rojo     { background-color: #e74c3c; }
+.naranja  { background-color: #e67e22; }
+.cian     { background-color: #1abc9c; }
+
+.Input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.Input-text {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.fotos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
 }
 
 .icon-label {
@@ -16,29 +85,55 @@
   background-repeat: no-repeat;
   background-color: #ffffff95;
   background-origin: content-box;
-  border: 0.2rem solid white;
-  border-radius: 20px;
+  border: 2px solid white;
+  border-radius: 12px;
   background-size: contain;
-  height: 1.8em;
-  width: 1.8em;
+  background-position: center;
+  height: 2rem;
+  width: 2rem;
   display: inline-block;
-  padding: 2%;
-  margin: 3px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.2s ease;
 }
 
-/* Updated 8 Piece Image Icons */
-.icon-iron { background-image: url("../../static/iconos/iron.png"); }
-.icon-cart { background-image: url("../../static/iconos/cart.png"); }
-.icon-dog { background-image: url("../../static/iconos/dog.png"); }
-.icon-car { background-image: url("../../static/iconos/car.png"); }
-.icon-hat { background-image: url("../../static/iconos/hat.png"); }
-.icon-ship { background-image: url("../../static/iconos/ship.png"); }
-.icon-shoe { background-image: url("../../static/iconos/shoe.png"); }
-.icon-thimble { background-image: url("../../static/iconos/thimble.png"); }
+.icon-label:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
 
 input[type="radio"]:checked + .icon-label {
+  background-color: #ffffff;
   filter: invert(75%);
-  border-color: #000;
+  border-color: #080808;
+}
+
+/* Icons */
+.icon-iron    { background-image: url("../../static/iconos/iron.png"); }
+.icon-cart    { background-image: url("../../static/iconos/cart.png"); }
+.icon-dog     { background-image: url("../../static/iconos/dog.png"); }
+.icon-car     { background-image: url("../../static/iconos/car.png"); }
+.icon-hat     { background-image: url("../../static/iconos/hat.png"); }
+.icon-ship    { background-image: url("../../static/iconos/ship.png"); }
+.icon-shoe    { background-image: url("../../static/iconos/shoe.png"); }
+.icon-thimble { background-image: url("../../static/iconos/thimble.png"); }
+
+.boton {
+  margin-top: 30px;
+}
+
+.boton input[type="submit"] {
+  padding: 12px 35px;
+  border-radius: 1rem;
+  background-color: #2df9ff;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  font-weight: bold;
+}
+
+.boton input[type="submit"]:hover {
+  background-color: #30d1d6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
