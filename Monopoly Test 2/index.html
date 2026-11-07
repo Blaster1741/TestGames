@@ -9,11 +9,210 @@
     <link rel="stylesheet" href="./styles/general/style_general.css" media="all" />
     <link rel="stylesheet" href="./styles/dice/style_dice.css" media="all" />
     <link rel="stylesheet" href="./styles/normalize.css" media="all" />
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./static/favicon.png" type="image/x-icon">
     <script type="module" src="./scripts/tablero.js"></script>
     <title>Monopoly</title>
+    <style>
+      /* Main Layout Engine */
+      body { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      .btn-reinicio { position: relative; }
+      .btn-reinicio a { position: absolute; right: 1rem; top: 1rem; }
+      .btn-reinicio a input {
+        border-radius: 0.6rem; border: none; background-color: #f0f0f0;
+        cursor: pointer; background-image: url("./static/iconos/reinicio.png");
+        background-size: 2.5rem; background-position: center; width: 3.5rem; height: 3.5rem;
+        background-repeat: no-repeat;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        grid-template-areas: "tarjetas tablero";
+        gap: 15px;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 92vh;
+      }
+
+      /* Sidebar Player Cards */
+      .tarjetas {
+        grid-area: tarjetas;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-height: 88vh;
+        overflow-y: auto;
+        padding-right: 5px;
+      }
+
+      .tarjeta {
+        color: white;
+        display: grid;
+        grid-template-columns: 35% 65%;
+        grid-template-areas: "foto datos-jugador";
+        border-radius: 14px;
+        align-items: center;
+        padding: 6px;
+        box-sizing: border-box;
+      }
+
+      .morado   { background-color: #6f6280; }
+      .rosa     { background-color: #e8637f; }
+      .amarillo { background-color: #ebd160; }
+      .verde    { background-color: #79d9a3; }
+      .azul     { background-color: #2df9ff; }
+      .rojo     { background-color: #e74c3c; }
+      .naranja  { background-color: #e67e22; }
+      .cian     { background-color: #1abc9c; }
+
+      .foto { grid-area: foto; display: flex; align-items: center; justify-content: center; }
+      .foto img { width: 34px; height: 34px; background-color: rgba(255,255,255,0.6); border-radius: 8px; padding: 3px; object-fit: contain; }
+      
+      .datos-jugador {
+        grid-area: datos-jugador;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 0.85rem;
+        text-align: left;
+        gap: 2px;
+      }
+      .nombre { grid-column: 1 / span 2; font-weight: bold; font-size: 0.95rem; }
+      .dinero { grid-column: 1; font-weight: bold; }
+      .propiedades { grid-column: 2; font-size: 0.75rem; }
+      .propiedades-cantidad { grid-column: 2; font-weight: bold; }
+
+      /* Monopoly Board 11x11 Grid */
+      .tablero {
+        grid-area: tablero;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        text-transform: uppercase;
+      }
+
+      .table { transform: scale(0.65); transform-origin: center center; }
+
+      .board {
+        display: grid;
+        grid-template-columns: 125px repeat(9, 80px) 125px;
+        grid-template-rows: 125px repeat(9, 80px) 125px;
+        grid-gap: 2px;
+        background: #080808;
+        border: 2px solid #080808;
+      }
+
+      .center {
+        grid-column: 2 / 11;
+        grid-row: 2 / 11;
+        background: #f0f0f0;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        justify-items: center;
+        align-items: center;
+      }
+
+      #mensaje {
+        grid-column: 1 / 8;
+        grid-row: 1 / 4;
+        font-size: 2.2em;
+        font-weight: bold;
+        text-align: center;
+        visibility: hidden;
+      }
+
+      .title { grid-column: 1 / 8; grid-row: 4; }
+
+      .botones {
+        grid-column: 1 / 8;
+        grid-row: 5;
+        display: flex;
+        gap: 15px;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .botones input[type="button"] {
+        border-radius: 1.2rem;
+        background-color: #f0f0f0;
+        border: none;
+        background-size: 4rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 5.5rem;
+        height: 5.5rem;
+        cursor: pointer;
+      }
+
+      .botones input[type="button"]#comprar { background-image: url("./static/iconos/moneda.png"); }
+      .botones input[type="button"]#pasar   { background-image: url("./static/iconos/flecha.png"); }
+      .botones input[type="button"]#intercambiar { background-image: url("./static/iconos/trade.png"); }
+
+      .row { display: grid; grid-gap: 2px; }
+      .horizontal-row { grid-template-columns: repeat(9, 80px); grid-template-rows: 125px; }
+      .vertical-row   { grid-template-columns: 125px; grid-template-rows: repeat(9, 80px); }
+
+      .bottom-row { grid-column: 2 / 11; grid-row: 11; }
+      .left-row   { grid-column: 1; grid-row: 2 / 11; }
+      .top-row    { grid-column: 2 / 11; grid-row: 1; }
+      .right-row  { grid-column: 11; grid-row: 2 / 11; }
+
+      .space { background: #f0f0f0; text-align: center; position: relative; }
+      .space .container { display: flex; flex-direction: column; justify-content: space-between; height: 125px; width: 80px; }
+      .space .name { padding: 4px; font-weight: bold; }
+      .space .price { font-size: 10px; padding-bottom: 4px; }
+      .property .color-bar { height: 22px; border-bottom: 2px solid #080808; }
+
+      .light-blue  { background-color: #d2eaf5; }
+      .brown       { background-color: #3e0000; }
+      .orange      { background-color: #fa811d; }
+      .purple      { background-color: #b02f7c; }
+      .red         { background-color: #ba0C2f; }
+      .yellow      { background-color: #ffed20; }
+      .green       { background-color: #41994e; }
+      .dark-blue   { background-color: #5a6dba; }
+
+      .corner .container { height: 100%; width: 100%; justify-content: space-around; }
+      .go { grid-column: 11; grid-row: 11; }
+      .jail { grid-column: 1; grid-row: 11; }
+      .free-parking { grid-column: 1; grid-row: 1; }
+      .go-to-jail { grid-column: 11; grid-row: 1; }
+
+      .corner-icon { width: 40px; height: 40px; object-fit: contain; margin: auto; display: block; }
+      .corner-icon-sm { width: 28px; height: 28px; object-fit: contain; margin: auto; display: block; }
+      .bot-badge { width: 14px; height: 14px; object-fit: contain; vertical-align: middle; }
+      .modal-header-icon { width: 22px; height: 22px; object-fit: contain; vertical-align: middle; }
+
+      /* Piece Token Container Overlay */
+      .fichas-container {
+        position: absolute;
+        bottom: 3px; left: 2px; right: 2px;
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 2px;
+        z-index: 10; pointer-events: none;
+      }
+      .ficha-piece {
+        width: 16px; height: 16px; object-fit: contain;
+        background-color: rgba(255,255,255,0.9); border-radius: 50%;
+        border: 1.5px solid #000; box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      }
+
+      /* Trade Modal */
+      .trade-modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(0, 0, 0, 0.75); display: flex; justify-content: center; align-items: center; z-index: 9999;
+      }
+      .trade-modal-overlay.hidden { display: none !important; }
+      .trade-modal-content { background: #fff; color: #080808; padding: 25px; border-radius: 16px; width: 90%; max-width: 600px; }
+      .trade-columns { display: flex; gap: 15px; margin: 15px 0; }
+      .trade-col { flex: 1; background: #f4f4f4; padding: 12px; border-radius: 8px; }
+      .props-checklist { max-height: 140px; overflow-y: auto; text-align: left; }
+      .btn-trade { background: #41994e; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+      .btn-cancel { background: #e73737; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+    </style>
 </head>
 
 <body>
