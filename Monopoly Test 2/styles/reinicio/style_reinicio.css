@@ -1,0 +1,137 @@
+#form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.player-count-selector {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.player-count-selector select, .type-select {
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+}
+
+.tarjetas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.jugador {
+  border-radius: 25px;
+  padding: 1%;
+  width: 40%;
+  margin: 1%;
+}
+
+.morado   { background-color: #6f6280; }
+.rosa     { background-color: #e8637f; }
+.amarillo { background-color: #ebd160; }
+.verde    { background-color: #79d9a3; }
+.azul     { background-color: #2df9ff; }
+.rojo     { background-color: #e74c3c; }
+.naranja  { background-color: #e67e22; }
+.cian     { background-color: #1abc9c; }
+
+.Input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3% 2% 2% 2%;
+  font-size: 1rem;
+  gap: 10px;
+}
+
+.Input-text {
+  display: flex;
+  padding: 2%;
+  width: 70%;
+  border: none;
+  border-radius: 0.4rem;
+  transition: 0.5s;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.fotos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.icon-label {
+  border-color: transparent;
+  background-repeat: no-repeat;
+  background-color: #ffffff95;
+  background-origin: content-box;
+  border: 0.2rem solid white;
+  border-radius: 20px;
+  background-size: contain;
+  background-position: center;
+  height: 1.8em;
+  width: 1.8em;
+  display: inline-block;
+  padding: 2%;
+  margin: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.icon-label:hover {
+  outline: none;
+  box-shadow: 0.1em 0.1em #ffffff95;
+  transform: scale(1.05);
+}
+
+input[type="radio"]:checked + .icon-label {
+  background-color: #ffffff95;
+  border: 0.2rem solid #080808;
+  filter: invert(75%);
+}
+
+.icon-iron    { background-image: url("../../static/iconos/iron.png"); }
+.icon-cart    { background-image: url("../../static/iconos/cart.png"); }
+.icon-dog     { background-image: url("../../static/iconos/dog.png"); }
+.icon-car     { background-image: url("../../static/iconos/car.png"); }
+.icon-hat     { background-image: url("../../static/iconos/hat.png"); }
+.icon-ship    { background-image: url("../../static/iconos/ship.png"); }
+.icon-shoe    { background-image: url("../../static/iconos/shoe.png"); }
+.icon-thimble { background-image: url("../../static/iconos/thimble.png"); }
+
+.boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 2%;
+}
+
+.boton input[type="submit"] {
+  padding: 1% 3%;
+  border-radius: 1rem;
+  background-color: #2df9ff;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: 0.5s;
+  border: none;
+  font-weight: bold;
+}
+
+.boton input[type="submit"]:hover {
+  background-color: #30d1d6;
+  box-shadow: 0.1em 0.1em #ffffff95;
+}
