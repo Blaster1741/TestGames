@@ -63,10 +63,13 @@ export default class Constructora {
       let tarjetaDiv = document.createElement("div");
       tarjetaDiv.className = `tarjeta ${colorClass}`;
       tarjetaDiv.innerHTML = `
-        <div class="foto"><img src="./static/iconos/${pData.icon}.png" alt="${pData.icon}"></div>
+        <div class="foto">
+          <img src="./static/iconos/${pData.icon}.png" alt="${pData.icon}">
+          <span class="piece-tag">${pData.icon}</span>
+        </div>
         <div class="datos-jugador">
           <div class="nombre">${pData.name} ${pData.isBot ? '<img src="./static/iconos/bot.png" class="bot-badge" alt="BOT" title="AI Bot">' : ""}</div>
-          <div class="dinero">${pData.money} ₱</div>
+          <div class="dinero">$${pData.money}</div>
           <div class="propiedades">Properties:</div>
           <div class="propiedades-cantidad">0</div>
           <div class="posicion" hidden>0</div>

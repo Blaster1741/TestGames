@@ -14,27 +14,40 @@
     <script type="module" src="./scripts/tablero.js"></script>
     <title>Monopoly</title>
     <style>
-      /* Main Layout Engine */
       body { margin: 0; padding: 0; box-sizing: border-box; }
       
-      .btn-reinicio { position: relative; }
-      .btn-reinicio a { position: absolute; right: 1rem; top: 1rem; }
+      header {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      }
+
+      #logo {
+        color: #ffffff;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      }
+
       .btn-reinicio a input {
         border-radius: 0.6rem; border: none; background-color: #f0f0f0;
         cursor: pointer; background-image: url("./static/iconos/reinicio.png");
-        background-size: 2.5rem; background-position: center; width: 3.5rem; height: 3.5rem;
+        background-size: 2rem; background-position: center; width: 2.8rem; height: 2.8rem;
         background-repeat: no-repeat;
       }
 
       .container {
         display: grid;
-        grid-template-columns: 260px 1fr;
+        grid-template-columns: 280px 1fr;
         grid-template-areas: "tarjetas tablero";
         gap: 15px;
-        padding: 10px;
+        padding: 15px;
         box-sizing: border-box;
         width: 100%;
-        height: 92vh;
+        height: calc(100vh - 65px);
       }
 
       /* Sidebar Player Cards */
@@ -42,8 +55,8 @@
         grid-area: tarjetas;
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        max-height: 88vh;
+        gap: 10px;
+        max-height: 85vh;
         overflow-y: auto;
         padding-right: 5px;
       }
@@ -51,12 +64,13 @@
       .tarjeta {
         color: white;
         display: grid;
-        grid-template-columns: 35% 65%;
+        grid-template-columns: 75px 1fr;
         grid-template-areas: "foto datos-jugador";
-        border-radius: 14px;
+        border-radius: 12px;
         align-items: center;
-        padding: 6px;
+        padding: 8px;
         box-sizing: border-box;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
       }
 
       .morado   { background-color: #6f6280; }
@@ -68,8 +82,30 @@
       .naranja  { background-color: #e67e22; }
       .cian     { background-color: #1abc9c; }
 
-      .foto { grid-area: foto; display: flex; align-items: center; justify-content: center; }
-      .foto img { width: 34px; height: 34px; background-color: rgba(255,255,255,0.6); border-radius: 8px; padding: 3px; object-fit: contain; }
+      .foto { 
+        grid-area: foto; 
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        gap: 2px;
+      }
+      .foto img { 
+        width: 36px; 
+        height: 36px; 
+        background-color: rgba(255,255,255,0.7); 
+        border-radius: 8px; 
+        padding: 4px; 
+        object-fit: contain; 
+        border: 1px solid #000;
+      }
+      .piece-tag {
+        font-size: 0.65rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      }
       
       .datos-jugador {
         grid-area: datos-jugador;
@@ -78,13 +114,15 @@
         font-size: 0.85rem;
         text-align: left;
         gap: 2px;
+        color: #ffffff;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
       }
-      .nombre { grid-column: 1 / span 2; font-weight: bold; font-size: 0.95rem; }
-      .dinero { grid-column: 1; font-weight: bold; }
+      .nombre { grid-column: 1 / span 2; font-weight: bold; font-size: 1rem; }
+      .dinero { grid-column: 1; font-weight: bold; font-size: 0.95rem; }
       .propiedades { grid-column: 2; font-size: 0.75rem; }
       .propiedades-cantidad { grid-column: 2; font-weight: bold; }
 
-      /* Monopoly Board 11x11 Grid */
+      /* Centered Monopoly Board Grid */
       .tablero {
         grid-area: tablero;
         display: flex;
@@ -94,7 +132,7 @@
         text-transform: uppercase;
       }
 
-      .table { transform: scale(0.65); transform-origin: center center; }
+      .table { transform: scale(0.72); transform-origin: center center; }
 
       .board {
         display: grid;
@@ -103,6 +141,7 @@
         grid-gap: 2px;
         background: #080808;
         border: 2px solid #080808;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       }
 
       .center {
@@ -187,7 +226,7 @@
       .bot-badge { width: 14px; height: 14px; object-fit: contain; vertical-align: middle; }
       .modal-header-icon { width: 22px; height: 22px; object-fit: contain; vertical-align: middle; }
 
-      /* Piece Token Container Overlay */
+      /* Board Piece Overlay Container */
       .fichas-container {
         position: absolute;
         bottom: 3px; left: 2px; right: 2px;
@@ -217,12 +256,12 @@
 
 <body>
     <header>
+        <div id="logo">Monopoly</div>
         <div class="btn-reinicio">
             <a href="reinicio.html" title="Restart">
                 <input type="button" value="ㅤ" id="reinicio"/>
             </a>
         </div>
-        <div id="logo">Monopoly</div>
     </header>
         
 <div class="container">
@@ -256,7 +295,7 @@
         
                 <div class="space corner go">
                     <div class="container">
-                        <div class="instructions">Collect ₱200.00 gift</div>
+                        <div class="instructions">Collect $200 gift</div>
                         <div class="go-word">go</div>
                     </div>
                     <div class="arrow fa fa-long-arrow-left"></div>
@@ -267,14 +306,14 @@
                         <div class="container">
                             <div class="color-bar light-blue"></div>
                             <div class="name">Connecticut Avenue</div>
-                            <div class="price">₱120</div>
+                            <div class="price">$120</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar light-blue"></div>
                             <div class="name">Vermont Avenue</div>
-                            <div class="price">₱100</div>
+                            <div class="price">$100</div>
                         </div>
                     </div>
                     <div class="space chance">
@@ -287,28 +326,28 @@
                         <div class="container">
                             <div class="color-bar light-blue"></div>
                             <div class="name">Oriental Avenue</div>
-                            <div class="price">₱100</div>
+                            <div class="price">$100</div>
                         </div>
                     </div>
                     <div class="space railroad">
                         <div class="container">
                             <div class="name">Reading Railroad</div>
                             <i class="drawing fa fa-subway"></i>
-                            <div class="price">₱200</div>
+                            <div class="price">$200</div>
                         </div>
                     </div>
                     <div class="space fee income-tax">
                         <div class="container">
                             <div class="name">Income Tax</div>
                             <div class="diamond"></div>
-                            <div class="instructions">₱25</div>
+                            <div class="instructions">$25</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar brown"></div>
                             <div class="name">Baltic Avenue</div>
-                            <div class="price">₱50</div>
+                            <div class="price">$50</div>
                         </div>
                     </div>
                     <div class="space community-chest">
@@ -322,7 +361,7 @@
                         <div class="container">
                             <div class="color-bar brown"></div>
                             <div class="name">Mediterranean Avenue</div>
-                            <div class="price">₱50</div>
+                            <div class="price">$50</div>
                         </div>
                     </div>
                 </div>
@@ -349,14 +388,14 @@
                         <div class="container">
                             <div class="color-bar orange"></div>
                             <div class="name">New York Avenue</div>
-                            <div class="price">₱200</div>
+                            <div class="price">$200</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar orange"></div>
                             <div class="name">Tennessee Avenue</div>
-                            <div class="price">₱180</div>
+                            <div class="price">$180</div>
                         </div>
                     </div>
                     <div class="space community-chest">
@@ -370,42 +409,42 @@
                         <div class="container">
                             <div class="color-bar orange"></div>
                             <div class="name">St. James Place</div>
-                            <div class="price">₱180</div>
+                            <div class="price">$180</div>
                         </div>
                     </div>
                     <div class="space railroad">
                         <div class="container">
                             <div class="name">Pennsylvania Railroad</div>
                             <i class="drawing fa fa-subway"></i>
-                            <div class="price">₱200</div>
+                            <div class="price">$200</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar purple"></div>
                             <div class="name">Virginia Avenue</div>
-                            <div class="price">₱160</div>
+                            <div class="price">$160</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar purple"></div>
                             <div class="name">States Avenue</div>
-                            <div class="price">₱140</div>
+                            <div class="price">$140</div>
                         </div>
                     </div>
                     <div class="space utility electric-company">
                         <div class="container">
                             <div class="name">Electric Company</div>
                             <i class="drawing fa fa-lightbulb-o"></i>
-                            <div class="price">₱150</div>
+                            <div class="price">$150</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar purple"></div>
                             <div class="name">St. Charles Place</div>
-                            <div class="price">₱140</div>
+                            <div class="price">$140</div>
                         </div>
                     </div>
                 </div>
@@ -423,7 +462,7 @@
                         <div class="container">
                             <div class="color-bar red"></div>
                             <div class="name">Kentucky Avenue</div>
-                            <div class="price">₱220</div>
+                            <div class="price">$220</div>
                         </div>
                     </div>
                     <div class="space chance">
@@ -436,49 +475,49 @@
                         <div class="container">
                             <div class="color-bar red"></div>
                             <div class="name">Indiana Avenue</div>
-                            <div class="price">₱220</div>
+                            <div class="price">$220</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar red"></div>
                             <div class="name">Illinois Avenue</div>
-                            <div class="price">₱200</div>
+                            <div class="price">$200</div>
                         </div>
                     </div>
                     <div class="space railroad">
                         <div class="container">
                             <div class="name">B. & O. Railroad</div>
                             <i class="drawing fa fa-subway"></i>
-                            <div class="price">₱200</div>
+                            <div class="price">$200</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar yellow"></div>
                             <div class="name">Atlantic Avenue</div>
-                            <div class="price">₱260</div>
+                            <div class="price">$260</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar yellow"></div>
                             <div class="name">Ventnor Avenue</div>
-                            <div class="price">₱260</div>
+                            <div class="price">$260</div>
                         </div>
                     </div>
                     <div class="space utility waterworks">
                         <div class="container">
                             <div class="name">Water Works</div>
                             <i class="drawing fa fa-tint"></i>
-                            <div class="price">₱120</div>
+                            <div class="price">$120</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar yellow"></div>
                             <div class="name">Marvin Gardens</div>
-                            <div class="price">₱280</div>
+                            <div class="price">$280</div>
                         </div>
                     </div>
                 </div>
@@ -496,14 +535,14 @@
                         <div class="container">
                             <div class="color-bar green"></div>
                             <div class="name">Pacific Avenue</div>
-                            <div class="price">₱300</div>
+                            <div class="price">$300</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar green"></div>
                             <div class="name">North Carolina Avenue</div>
-                            <div class="price">₱300</div>
+                            <div class="price">$300</div>
                         </div>
                     </div>
                     <div class="space community-chest">
@@ -517,14 +556,14 @@
                         <div class="container">
                             <div class="color-bar green"></div>
                             <div class="name">Pennsylvania Avenue</div>
-                            <div class="price">₱320</div>
+                            <div class="price">$320</div>
                         </div>
                     </div>
                     <div class="space railroad">
                         <div class="container">
                             <div class="name">Short Line Railroad</div>
                             <i class="drawing fa fa-subway"></i>
-                            <div class="price">₱200</div>
+                            <div class="price">$200</div>
                         </div>
                     </div>
                     <div class="space chance">
@@ -537,21 +576,21 @@
                         <div class="container">
                             <div class="color-bar dark-blue"></div>
                             <div class="name">Park Place</div>
-                            <div class="price">₱350</div>
+                            <div class="price">$350</div>
                         </div>
                     </div>
                     <div class="space fee luxury-tax">
                         <div class="container">
                             <div class="name">Luxury Tax</div>
                             <div class="drawing fa fa-diamond"></div>
-                            <div class="instructions">₱75</div>
+                            <div class="instructions">$75</div>
                         </div>
                     </div>
                     <div class="space property">
                         <div class="container">
                             <div class="color-bar dark-blue"></div>
                             <div class="name">Boardwalk</div>
-                            <div class="price">₱400</div>
+                            <div class="price">$400</div>
                         </div>
                     </div>
                 </div>
@@ -573,7 +612,7 @@
       <div class="trade-col">
         <h3 id="trade-offerer-name">Your Offer</h3>
         <div class="cash-input-group">
-          <label>Cash (₱): </label>
+          <label>Cash ($): </label>
           <input type="number" id="trade-offer-cash" min="0" value="0">
         </div>
         <h4>Properties:</h4>
@@ -583,7 +622,7 @@
       <div class="trade-col">
         <h3 id="trade-target-name">Their Offer</h3>
         <div class="cash-input-group">
-          <label>Cash (₱): </label>
+          <label>Cash ($): </label>
           <input type="number" id="trade-request-cash" min="0" value="0">
         </div>
         <h4>Properties:</h4>

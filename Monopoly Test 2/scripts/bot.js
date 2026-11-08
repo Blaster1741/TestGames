@@ -29,7 +29,7 @@ export default class BotEngine {
     requestedProps.forEach((prop) => { requestedValue += prop.coste; });
 
     const accepted = offeredValue >= requestedValue;
-    console.log(`[BOT] ${bot.nombre} trade valuation: Offered (${offeredValue}₱) vs Requested (${requestedValue}₱) -> ${accepted ? 'ACCEPTED' : 'REJECTED'}`);
+    console.log(`[BOT] ${bot.nombre} trade valuation: Offered ($${offeredValue}) vs Requested ($${requestedValue}) -> ${accepted ? 'ACCEPTED' : 'REJECTED'}`);
     return accepted;
   }
 }

@@ -66,11 +66,11 @@ export default class Jugador {
 
     if (this.dinero > 0) {
       this.divDinero.style.color = color;
-      this.divDinero.innerHTML = cantidad > 0 ? `+${cantidad} ₱` : `${cantidad} ₱`;
+      this.divDinero.innerHTML = cantidad > 0 ? `+$${cantidad}` : `-$${Math.abs(cantidad)}`;
 
       setTimeout(() => {
         this.divDinero.style.color = "white";
-        this.divDinero.innerHTML = `${this.dinero} ₱`;
+        this.divDinero.innerHTML = `$${this.dinero}`;
         this.div.style.boxShadow = "none";
       }, 3000);
     } else {
@@ -85,7 +85,7 @@ export default class Jugador {
 
       jugador.vivo = false;
       jugador.div.style.backgroundColor = "#9E9E9E";
-      jugador.divDinero.innerHTML = "0";
+      jugador.divDinero.innerHTML = "$0";
       jugador.propiedadesCantidad.innerHTML = "0";
       if (jugador.fichaImg.parentNode) {
         jugador.fichaImg.parentNode.removeChild(jugador.fichaImg);

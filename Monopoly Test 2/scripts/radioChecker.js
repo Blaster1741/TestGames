@@ -22,8 +22,11 @@ $(document).ready(function () {
           </div>
           <div class="fotos">
             ${icons.map((icon, idx) => `
-              <input type="radio" name="foto${i}" id="fotoJ${i}_${idx}" value="${icon}">
-              <label for="fotoJ${i}_${idx}" class="icon-label icon-${icon}" title="${icon}">ㅤ</label>
+              <div class="icon-option">
+                <input type="radio" name="foto${i}" id="fotoJ${i}_${idx}" value="${icon}">
+                <label for="fotoJ${i}_${idx}" class="icon-label icon-${icon}" title="${icon}">ㅤ</label>
+                <span class="icon-tag-name">${icon}</span>
+              </div>
             `).join('')}
           </div>
         </div>

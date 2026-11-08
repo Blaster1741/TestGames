@@ -182,8 +182,8 @@ export default class Juego {
       prop.div.style.boxShadow = "inset 0em 0em 0em 0.4em " + ofreciente.color;
     });
 
-    ofreciente.divDinero.textContent = `${ofreciente.dinero} ₱`;
-    receptor.divDinero.textContent = `${receptor.dinero} ₱`;
+    ofreciente.divDinero.textContent = `$${ofreciente.dinero}`;
+    receptor.divDinero.textContent = `$${receptor.dinero}`;
     ofreciente.propiedadesCantidad.textContent = ofreciente.propiedades.length;
     receptor.propiedadesCantidad.textContent = receptor.propiedades.length;
   }

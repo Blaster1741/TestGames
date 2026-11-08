@@ -71,7 +71,7 @@ $(document).ready(function () {
     properties.forEach((prop, idx) => {
       container.append(`
         <label>
-          <input type="checkbox" value="${idx}"> ${prop.nombre} (${prop.coste}₱)
+          <input type="checkbox" value="${idx}"> ${prop.nombre} ($${prop.coste})
         </label>
       `);
     });

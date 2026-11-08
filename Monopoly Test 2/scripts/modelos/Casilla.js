@@ -12,18 +12,15 @@ export default class Casilla {
   #getNombre() {
     if(this.tipo == "property"){
       return this.div.getElementsByClassName("name")[0].textContent;
-    }else
+    } else {
       return null;
+    }
   }
 
   #getTipo() {
     return this.div.getAttribute("class").replace("space ", "");
   }
 
-  /** Consigue el color de la casilla
-   * 
-   * @returns {string} El tipo color de la propiedad, si no devuelve null
-   */
   #getColor() {
     if(this.tipo == "property")
       return window.getComputedStyle(this.div, null).getPropertyValue('background-color');
@@ -31,17 +28,15 @@ export default class Casilla {
       return null;
   }
 
-  /** Consigue el precio de la casilla
-   * 
-   * @returns {number} El precio de la propiedad, si no devuelve null
-   */
   #getCoste() {
     var coste = null;
 
-    if(this.tipo == "property")
-      coste = parseInt(this.div.getElementsByClassName("price")[0].innerHTML.split("₱")[1]);
-    else if(this.tipo.includes("fee")){
-      coste = parseInt(this.div.getElementsByClassName("instructions")[0].innerHTML.split("₱")[1]);      
+    if(this.tipo == "property") {
+      let priceText = this.div.getElementsByClassName("price")[0].innerHTML;
+      coste = parseInt(priceText.replace(/[^0-9]/g, ""));
+    } else if(this.tipo.includes("fee")) {
+      let feeText = this.div.getElementsByClassName("instructions")[0].innerHTML;
+      coste = parseInt(feeText.replace(/[^0-9]/g, ""));      
     }
     
     return coste;
